@@ -174,9 +174,10 @@ automation:
               - condition: template
                 value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
     action:
-    - data:
+    - service: climate.set_hvac_mode
+      data:
         entity_id: climate.riscaldamento
-      service: climate.turn_on
+        hvac_mode: heat
     - service: input_select.select_option
       data:
         entity_id: input_select.modalita_old
@@ -383,25 +384,6 @@ automation:
 
   - id: 'spegnimento pre'
     alias: spegnimento pre
-    description: ''
-    trigger:
-    - entity_id: input_select.modalita_termostato
-      platform: state
-      to: PRERISCALDAMENTO
-    condition:
-      condition: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
-    action:
-    - data:
-        entity_id: climate.riscaldamento
-      service: climate.turn_off
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.modalita_old
-        option: PRERISCALDAMENTO
-
-  - id: 'spegnimento pre2'
-    alias: spegnimento pre2
     description: ''
     trigger:
     - platform: template
