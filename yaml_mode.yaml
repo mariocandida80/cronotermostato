@@ -430,7 +430,7 @@
                   top: 50%
                 type: image
               - entity: switch.sonoff_10004b541f
-                image: /local/immagini/gif/fiamma.gif
+                image: /local/immagini/fiamma.gif
                 style:
                   left: 90%
                   top: 65%
