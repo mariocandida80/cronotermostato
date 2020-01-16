@@ -22,7 +22,8 @@ Aprire il file Pkg_cronotermostato_v1_1.yaml ed effettuare le seguenti modifiche
 4. sostituire la zona casa con la propria (riga 21)<br>
 5. sostituire il servizio di notifica con il proprio (riga 22)<br>
 6. se non si ha già il sensor.time, togliere i commenti (righe da 108 a 111)<br>
-7. se volete un’isteresi, ovvero che il termostato si spenga ad una temperatura superiore o che si riaccenda 
+7. sostituire sensor.sonoff_10004b541f_temperature con il proprio (riga 429)<br>
+8. se volete un’isteresi, ovvero che il termostato si spenga ad una temperatura superiore o che si riaccenda 
 ad una inferiore a quella impostata, dovrete modificare hot_tolerance e cold_tolerance. 
 Esempio: impostando la temperatura a 23 e impostando cold_tolerance a 2 e hot_tollerance a 0, il termostato si spegnerà 
 quando arriverà a 23 gradi e si riaccenderà a 21. Di default sono impostati cold_tolerance: 0.5 e hot_tolerance: 0.<br>
