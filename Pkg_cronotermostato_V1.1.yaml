@@ -19,8 +19,8 @@ homeassistant:
         Sensore Temperatura: &sens_temp 'sensor.temperatura'      #sostituire con il sensore della temperatura
         Tracker: &tracker 'device_tracker.tracker'
         Zona: &zona 'zone.casa'
-        Servizio Notifica: &servizio 'notify.servizio' 
- 
+        Servizio Notifica: &servizio 'notify.servizio'
+
     ##---------------------                           ---------------------##
 
 #Entità termostato.
