@@ -1,0 +1,469 @@
+homeassistant:
+  customize:
+    package.node_anchors:
+      customize: &customize
+        package: 'Cronotermostato'
+        version: '1.0'
+        author: 'MARIO @tlod80'
+        reference: 'www.hassiohelp.eu'
+
+      expose: &expose
+        <<: *customize
+        haaska_hidden: false
+        homebridge_hidden: false
+
+
+    ##--------------------- IMPOSTAZIONI DEL PACKAGE ---------------------##
+      setting:
+        Interruttore Caldaia: &caldaia 'switch.interruttore'           #sostituire con l'interruttore che attiva la caldaia
+        Sensore Temperatura: &sens_temp 'sensor.temperatura'      #sostituire con il sensore della temperatura
+        Tracker: &tracker 'device_tracker.tracker'
+        Zona: &zona 'zone.casa'
+        Servizio Notifica: &servizio 'notify.servizio' 
+ 
+    ##---------------------                           ---------------------##
+
+#Entità termostato.
+
+climate:
+  - platform: generic_thermostat
+    name: Riscaldamento
+    heater: *caldaia
+    target_sensor: *sens_temp
+    min_temp: 18
+    max_temp: 24
+    ac_mode: False
+    hot_tolerance: 0
+    cold_tolerance: 0.5
+
+#Le modalità del termostato:
+# OFF: termostato spento
+# AUTO: il termostato si accende in base agli orari impostati se si è in casa
+# MANUALE: termostato acceso. Non tiene conto di orari e posizione
+# ECO: abbassa la temperatura ma comuque rimane acceso, ideale per la notte
+# PRERISCALDAMENTO: il termostato si accende all'ora impostata anche quando si è lontani da casa
+
+input_select:
+  modalita_termostato:
+    options:
+      - "OFF"
+      - "AUTO"
+      - "MANUALE"
+      - "ECO"
+      - "PRERISCALDAMENTO"
+
+#Serve per tenere traccia quando si passa in automatico alla modalià ECO
+#in modo da ritornare alla modalità precedente
+
+  modalita_old:
+    options:
+      - "OFF"
+      - "AUTO"
+      - "MANUALE"
+      - "ECO"
+      - "PRERISCALDAMENTO"
+#Questo input_select seve per le visualizzazioni in lovelace
+  visualizzazione:
+    options:
+      - "TERMOSTATO"
+      - "ORARIO"
+      - "IMPOSTAZIONI"
+
+input_datetime:
+  orario_accensione:
+    has_date: false
+    has_time: true
+  orario_spegnimento:
+    has_date: false
+    has_time: true
+  orario_accensione_eco:
+    has_date: false
+    has_time: true
+  orario_spegnimento_eco:
+    has_date: false
+    has_time: true
+
+input_text:
+  casella_vuota:
+    initial: ' '
+
+input_number:
+  temperatura_termostato:
+    min: 18
+    max: 24
+    step: 0.5
+    unit_of_measurement: °C
+
+  temperatura_termostato_old:
+    min: 18
+    max: 24
+    step: 0.5
+
+  temperatura_eco:
+    min: 18
+    max: 24
+    step: 0.5
+
+
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+
+
+automation:
+
+  - id: 'mod_manuale'
+    alias: modalità manuale
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      platform: state
+      to: 'MANUALE'
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_on
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: MANUALE
+
+
+  - id: 'mod_off'
+    alias: modalità off
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      platform: state
+      to: 'OFF'
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: 'OFF'
+
+
+  - id: 'accensione auto'
+    alias: accensione auto
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      platform: state
+      to: AUTO
+    condition:
+      condition: and
+      conditions:
+      - condition: zone
+        entity_id: *tracker
+        zone: *zona
+      - condition: or
+        conditions:
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) > (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_on
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+
+  - id: 'accensione auto2'
+    alias: accensione auto orario
+    trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.modalita_termostato
+        state: AUTO
+      - condition: zone
+        entity_id: *tracker
+        zone: *zona
+      - condition: or
+        conditions:
+          - condition: template
+            value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) > (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_on
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+
+  - id: 'spegnimento auto'
+    alias: spegnimento auto
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      platform: state
+      to: AUTO
+    condition:
+      condition: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+  - id: 'spegnimento auto2'
+    alias: spegnimento auto orario
+    trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+    - condition: state
+      entity_id: input_select.modalita_termostato
+      state: AUTO
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+  - id: 'temp term'
+    alias: temperatura termostato
+    trigger:
+      platform: state
+      entity_id: input_number.temperatura_termostato
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.riscaldamento
+          temperature: "{{ states('input_number.temperatura_termostato') }}"
+          hvac_mode: heat
+
+  - id: 'mod eco'
+    alias: modalità eco
+    trigger:
+      entity_id: input_select.modalita_termostato
+      platform: state
+      to: ECO
+    condition:
+      - condition: template
+        value_template: "{{ states('sensor.time') != (state_attr('input_datetime.orario_accensione_eco', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.temperatura_termostato_old
+          value: "{{ states('input_number.temperatura_termostato') }}"
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.temperatura_termostato
+          value: "{{ states('input_number.temperatura_eco') }}"
+
+  - id: 'auto eco'
+    alias: modalità eco auto
+    trigger:
+      platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.orario_accensione_eco', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'OFF'
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'AUTO'
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'MANUALE'
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'PRERISCALDAMENTO'
+    action:
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.temperatura_termostato_old
+          value: "{{ states('input_number.temperatura_termostato') }}"
+      - delay: 2
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.temperatura_termostato
+          value: "{{ states('input_number.temperatura_eco') }}"
+      - service: input_select.select_option
+        data_template:
+          entity_id: input_select.modalita_termostato
+          option: ECO
+
+  - id: 'auto norm'
+    alias: modalità normale
+    trigger:
+      platform: template
+      value_template: "{{ states('sensor.time') == (state_attr('input_datetime.orario_spegnimento_eco', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+      - service: input_select.select_option
+        data_template:
+          entity_id: input_select.modalita_termostato
+          option: "{{ states('input_select.modalita_old')}}"
+
+
+
+  - id: 'accensione pre'
+    alias: preriscaldamento
+    description: ''
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      platform: state
+      to: PRERISCALDAMENTO
+    condition:
+      condition: and
+      conditions:
+      - condition: or
+        conditions:
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) > (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_on
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: PRERISCALDAMENTO
+
+
+  - id: 'accensione pre2'
+    alias: accensione auto orario
+    description: ''
+    trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.modalita_termostato
+        state: PRERISCALDAMENTO
+      - condition: or
+        conditions:
+          - condition: template
+            value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) > (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - data:
+       entity_id: climate.riscaldamento
+      service: climate.turn_on
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: PRERISCALDAMENTO
+
+  - id: 'spegnimento pre'
+    alias: spegnimento pre
+    description: ''
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      platform: state
+      to: PRERISCALDAMENTO
+    condition:
+      condition: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: PRERISCALDAMENTO
+
+  - id: 'spegnimento pre2'
+    alias: spegnimento pre2
+    description: ''
+    trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+    - condition: state
+      entity_id: input_select.modalita_termostato
+      state: PRERISCALDAMENTO
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: PRERISCALDAMENTO
+
+  - id: 'pass da eco'
+    alias: passaggio da ECO
+    trigger:
+    - entity_id: input_select.modalita_termostato
+      from: ECO
+      platform: state
+    action:
+      - service: input_number.set_value
+        data_template:
+          entity_id: input_number.temperatura_termostato
+          value: "{{ states('input_number.temperatura_termostato_old') }}"
+
+  - id: 'mess'
+    alias: mess
+    trigger:
+    - entity_id: climate.riscaldamento
+      to: 'heat'
+      platform: state
+    action:
+      - service: *servizio
+        data:
+          title: TERMOSTATO ACCESO
+          message: >-
+                  Modalità termostato {{ states.input_select.modalita_termostato.state }}
+
+                  Temperatura casa {{ states.sensor.sonoff_10004b541f_temperature.state }} °C
+
+                  Temperatura impostata {{ state_attr('climate.riscaldamento', 'temperature') }} °C
+
+                  {% if is_state("input_select.modalita_termostato", "AUTO") %} Orario spegnimento {{ states.input_datetime.orario_spegnimento.state }}  {% elif is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} Orario spegnimento {{ states.input_datetime.orario_spegnimento.state }}  {% endif %}
