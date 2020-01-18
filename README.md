@@ -39,7 +39,7 @@ in alto a destra un pulsante per aprire le impostazioni degli orari di accension
 PRERISCALDAMENTO, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che 
 potete modificare con le 2 frecce che sono posizionate sopra e sotto; affianco sulla destra viene indicato se al momento 
 il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziata
-in giallo.<br><br>
+in giallo.<br>In alto a sinistra c'è un'icona messaggio per attivare e disattivare le notifiche; quando è gialla è attivo il servizio.<br><br>
 <p align="center"/> <b>Modalità di funzionamento</b><br> </p>
 Il termostato, è configurato per funzionare in 5 modalità:<br>
 
