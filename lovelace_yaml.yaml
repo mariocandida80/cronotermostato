@@ -423,7 +423,7 @@
                   entity_id: input_number.temperatura_termostato
               type: icon
             - entity: switch.sonoff_10004b541f
-              image: /local/immagini/gif/fiamma2.gif
+              image: /local/immagini/fiamma.gif
               style:
                 left: 90%
                 top: 50%
