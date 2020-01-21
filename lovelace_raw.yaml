@@ -165,7 +165,7 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Oraio accensione
+        prefix: Orario accensione
         style:
           border-radius: 6px
           color: white
@@ -185,7 +185,7 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Oraio spegnimento
+        prefix: Orario spegnimento
         style:
           border-radius: 6px
           color: white
@@ -260,7 +260,7 @@ states:
           left: 70%
           top: 50%
         type: state-label
-      - entity: sensor.sonoff_10004b541f_temperature
+      - entity: sensor.temp
         style:
           color: white
           font-size: 150%
@@ -277,7 +277,7 @@ states:
             {% endif %}
             color: {% if is_state("input_select.modalita_termostato", "OFF") %} red;
             {% endif %}
-          }    
+          }
         styles:
           card:
             - height: 45px
@@ -301,7 +301,7 @@ states:
             {% endif %}
             color: {% if is_state("input_select.modalita_termostato", "MANUALE") %} red;
             {% endif %}
-          }    
+          }
         styles:
           card:
             - height: 45px
@@ -325,7 +325,7 @@ states:
             {% endif %}
             color: {% if is_state("input_select.modalita_termostato", "AUTO") %} red;
             {% endif %}
-          }    
+          }
         styles:
           card:
             - height: 45px
@@ -334,10 +334,9 @@ states:
             - top: '-25px'
         tap_action:
           action: call-service
-          service: input_select.select_option
+          service: script.turn_on
           service_data:
-            entity_id: input_select.modalita_termostato
-            option: AUTO
+            entity_id: script.auto
         type: 'custom:button-card'
       - color: green
         entity: input_select.modalita_termostato
@@ -349,7 +348,7 @@ states:
             {% endif %}
             color: {% if is_state("input_select.modalita_termostato", "ECO") %} red;
             {% endif %}
-          }    
+          }
         styles:
           card:
             - height: 45px
@@ -373,7 +372,7 @@ states:
             {% endif %}
             color: {% if is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} red;
             {% endif %}
-          }    
+          }
         styles:
           card:
             - height: 45px
@@ -382,10 +381,9 @@ states:
             - top: '-25px'
         tap_action:
           action: call-service
-          service: input_select.select_option
+          service: script.turn_on
           service_data:
-            entity_id: input_select.modalita_termostato
-            option: PRERISCALDAMENTO
+            entity_id: script.pre
         type: 'custom:button-card'
       - entity: input_number.temperatura_termostato
         hold_action:
@@ -421,14 +419,14 @@ states:
           service_data:
             entity_id: input_number.temperatura_termostato
         type: icon
-      - entity: switch.sonoff_10004b541f
-        image: /local/immagini/fiamma.gif
+      - entity: switch.caldaia
+        image: /local/immagini/gif/fiamma2.gif
         style:
           left: 90%
           top: 50%
         type: image
-      - entity: switch.sonoff_10004b541f
-        image: /local/immagini/fiamma.gif
+      - entity: switch.caldaia
+        image: /local/immagini/gif/fiamma.gif
         style:
           left: 90%
           top: 65%
@@ -458,4 +456,3 @@ states:
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
 type: 'custom:state-switch'
-
