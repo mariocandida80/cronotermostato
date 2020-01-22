@@ -1,3 +1,4 @@
+<img src="https://img.shields.io/badge/Version-1.2-green">
 <p align="center"/> <b>Change log V1.2:</b> <br> </p>
 Quando il termostato è in modalità manuale e si passa in modalità auto o preriscaldamento e l'ora è fuori dall'intervallo di tempo impostato per l'accensione (e anche il tracking per la modalità auto), il termostato si spegne per poi accendersi all'ora impostata.<br>
 In modalità auto se si esce di casa, il termostato si spegne ed invia un messaggio per avvisare del cambiamento di stato.<br>
@@ -11,7 +12,7 @@ Vediamo come installarlo. <br>
 Per funzionare ha bisogno di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
 1. aver configurato i packages<br>
-2. installare button-card, card-mod  e state-switch (da HACS)<br><br>
+2. installare<a href="https://github.com/custom-cards/button-card">button-card, </a> <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod </a> e <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>  (da HACS)<br><br>
 
 <p align="center"/> <b>Installazione</b> <br> </p>
 Scaricare il file Pkg_cronotermostato_v1_1.zip e decomprimere i file. <br>
