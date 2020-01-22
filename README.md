@@ -1,4 +1,7 @@
-<img src="https://img.shields.io/badge/Versione-1.2-brightgreen">
+<img src="https://img.shields.io/badge/Versione-1.2-brightgreen"><br>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato">
+
+
 <p align="center"/> <b>Change log V1.2:</b> <br> </p>
 Quando il termostato è in modalità manuale e si passa in modalità auto o preriscaldamento e l'ora è fuori dall'intervallo di tempo impostato per l'accensione (e anche il tracking per la modalità auto), il termostato si spegne per poi accendersi all'ora impostata.<br>
 In modalità auto se si esce di casa, il termostato si spegne ed invia un messaggio per avvisare del cambiamento di stato.<br>
