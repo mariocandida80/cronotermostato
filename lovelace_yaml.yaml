@@ -421,13 +421,13 @@
                   entity_id: input_number.temperatura_termostato
               type: icon
             - entity: switch.caldaia
-              image: /local/immagini/fiamma.gif
+              image: /local/immagini/lovelace/fiamma.gif
               style:
                 left: 90%
                 top: 50%
               type: image
             - entity: switch.caldaia
-              image: /local/immagini/fiamma.gif
+              image: /local/immagini/lovelace/fiamma.gif
               style:
                 left: 90%
                 top: 65%
