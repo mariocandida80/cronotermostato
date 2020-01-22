@@ -6,7 +6,7 @@
 <p align="center"/> <b>Change log V1.2:</b> <br> </p>
 Quando il termostato è in modalità manuale e si passa in modalità auto o preriscaldamento e l'ora è fuori dall'intervallo di tempo impostato per l'accensione (e anche il tracking per la modalità auto), il termostato si spegne per poi accendersi all'ora impostata.<br>
 In modalità auto se si esce di casa, il termostato si spegne ed invia un messaggio per avvisare del cambiamento di stato.<br>
-Sempre per la modalità auto, se si è fuori casa e poi si rientra, il termostato si accende appena il tracker viene rilevato.<br>
+Sempre per la modalità auto, se si è fuori casa e poi si rientra, il termostato si accende appena il tracker viene rilevato.<br><br>
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
 Questo package crea una serie di entità ed automazioni per fare in modo che il termostato funzioni in varie 
 modalità selezionabili dall’utente e che sia possibile accenderlo in determinati orari e se si è o meno in casa. <br>
