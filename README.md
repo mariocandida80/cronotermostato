@@ -24,7 +24,7 @@ Copiare i file in questo modo:<br>
 Pkg_cronotermostato_v1_1.yaml nella cartella packages <br>
 blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
-Aprire il file Pkg_cronotermostato_v1_1.yaml ed effettuare le seguenti modifiche:<br>
+Aprire il file Pkg_cronotermostato_v1_2.yaml ed effettuare le seguenti modifiche:<br>
 1. sostituire switch.caldaia con lo switch che accende il termostato (riga 18)<br>
 2. sostituire sensor.temperature con il sensore della temperatura (riga 19)<br>
 3. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 20)<br>
