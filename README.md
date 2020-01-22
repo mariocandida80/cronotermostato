@@ -15,7 +15,7 @@ Vediamo come installarlo. <br>
 Per funzionare ha bisogno di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
 1. aver configurato i packages<br>
-2. installare<a href="https://github.com/custom-cards/button-card">button-card, </a> <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod </a> e <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>  (da HACS)<br><br>
+2. installare <a href="https://github.com/custom-cards/button-card">button-card, </a> <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod </a> e <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>  (da HACS)<br><br>
 
 <p align="center"/> <b>Installazione</b> <br> </p>
 Scaricare il file Pkg_cronotermostato_v1_1.zip e decomprimere i file. <br>
