@@ -25,13 +25,13 @@ Pkg_cronotermostato_v1_1.yaml nella cartella packages <br>
 blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
 Aprire il file Pkg_cronotermostato_v1_2.yaml ed effettuare le seguenti modifiche:<br>
-1. sostituire switch.caldaia con lo switch che accende il termostato (riga 18)<br>
-2. sostituire sensor.temperature con il sensore della temperatura (riga 19)<br>
-3. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 20)<br>
-4. sostituire la zona casa con la propria (riga 21)<br>
-5. sostituire il servizio di notifica con il proprio (riga 22)<br>
-6. se non si ha già il sensor.time, togliere i commenti (righe da 108 a 111)<br>
-7. sostituire sensor.sonoff_10004b541f_temperature con il proprio (riga 429)<br>
+1. sostituire switch.caldaia con lo switch che accende il termostato (riga 12)<br>
+2. sostituire sensor.temperature con il sensore della temperatura (riga 13)<br>
+3. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 14)<br>
+4. sostituire la zona home con la propria zona se è diversa (riga 15)<br>
+5. sostituire il servizio di notifica con il proprio (riga 16)<br>
+6. se non si ha già il sensor.time, togliere i commenti (righe da 102 a 105)<br>
+7. sostituire sensor.sensore_temperature con il proprio (riga 497)<br>
 8. se volete un’isteresi, ovvero che il termostato si spenga ad una temperatura superiore o che si riaccenda 
 ad una inferiore a quella impostata, dovrete modificare hot_tolerance e cold_tolerance. 
 Esempio: impostando la temperatura a 23 e impostando cold_tolerance a 2 e hot_tollerance a 0, il termostato si spegnerà 
@@ -62,6 +62,7 @@ PRE: il termostato si accende all’ora impostata anche se si è fuori casa.<br>
 
 ECO:  imposta una temperatura più bassa, ideale per la notte o se si vuole lasciare una temperatura più bassa quando non 
 si è a casa.<br><br>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato"></p>
 Quando è acceso il termostato, in qualsiasi modalità tranne la OFF, resterà acceso fino a quando non arriverà alla temperatura 
 impostata e si riaccenderà se la temperatura si riabbasserà. <br>
 La modalità ECO si attiva automaticamente all’ora impostata per poi ritornare alla modalità precedente e alla temperatura 
