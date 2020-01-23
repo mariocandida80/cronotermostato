@@ -9,26 +9,12 @@ homeassistant:
 
     ##--------------------- IMPOSTAZIONI DEL PACKAGE ---------------------##
       setting:
-        Interruttore Caldaia: &caldaia 'switch.caldaia'           #sostituire con l'interruttore che attiva la caldaia
-        Sensore Temperatura: &sens_temp 'sensor.temperature'      #sostituire con il sensore della temperatura
         Tracker: &tracker 'device_tracker.tracker'                #sostituire con il tracker
         Zona_casa: &zona 'home'                                   #se non si hanno le zone lasciare 'home'
         Servizio Notifica: &servizio 'notify.telegram'            #sostituire con il servizio di notifica
         Climate: &termostato 'climate.termostato'
     ##---------------------                           ---------------------##
 
-#Entità termostato.
-
-#climate:
-#  - platform: generic_thermostat
-#    name: Riscaldamento
-#    heater: *caldaia
-#    target_sensor: *sens_temp
-#    min_temp: 18
-#    max_temp: 24
-#    ac_mode: False
-#    hot_tolerance: 0
-#    cold_tolerance: 0.5
 
 #Le modalità del termostato:
 # OFF: termostato spento
