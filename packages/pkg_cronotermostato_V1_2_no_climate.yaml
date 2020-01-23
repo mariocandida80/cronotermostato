@@ -12,7 +12,7 @@ homeassistant:
         Tracker: &tracker 'device_tracker.tracker'                #sostituire con il tracker
         Zona_casa: &zona 'home'                                   #se non si hanno le zone lasciare 'home'
         Servizio Notifica: &servizio 'notify.telegram'            #sostituire con il servizio di notifica
-        Climate: &termostato 'climate.termostato'
+        Climate: &termostato 'climate.termostato'                 #sostituire con il prorio climate
     ##---------------------                           ---------------------##
 
 
