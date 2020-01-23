@@ -278,7 +278,7 @@
                   {% endif %}
                   color: {% if is_state("input_select.modalita_termostato", "OFF") %} red;
                   {% endif %}
-                }    
+                }
               styles:
                 card:
                   - height: 45px
@@ -302,7 +302,7 @@
                   {% endif %}
                   color: {% if is_state("input_select.modalita_termostato", "MANUALE") %} red;
                   {% endif %}
-                }    
+                }
               styles:
                 card:
                   - height: 45px
@@ -326,7 +326,7 @@
                   {% endif %}
                   color: {% if is_state("input_select.modalita_termostato", "AUTO") %} red;
                   {% endif %}
-                }    
+                }
               styles:
                 card:
                   - height: 45px
@@ -349,7 +349,7 @@
                   {% endif %}
                   color: {% if is_state("input_select.modalita_termostato", "ECO") %} red;
                   {% endif %}
-                }    
+                }
               styles:
                 card:
                   - height: 45px
@@ -373,7 +373,7 @@
                   {% endif %}
                   color: {% if is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} red;
                   {% endif %}
-                }    
+                }
               styles:
                 card:
                   - height: 45px
@@ -427,7 +427,6 @@
                 top: 50%
               type: image
             - entity: switch.caldaia
-              image: /local/immagini/lovelace/fiamma.gif
               style:
                 left: 90%
                 top: 65%
