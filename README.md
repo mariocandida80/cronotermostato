@@ -43,6 +43,7 @@ Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il co
 In entrambe le modalità dovrete sostituire sensor.temp con il vostro sensore e switch.caldaia (ce ne sono 2) con il
 vostro switch.<br><br>
 <p align="center"/> <b>Funzionamento</b><br> </p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato"></p>
 Nella card principale vi ritroverete in alto a sinistra un ingranaggio che apre le impostazioni per la modalità ECO, 
 in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e 
 PRERISCALDAMENTO, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che 
@@ -62,7 +63,7 @@ PRE: il termostato si accende all’ora impostata anche se si è fuori casa.<br>
 
 ECO:  imposta una temperatura più bassa, ideale per la notte o se si vuole lasciare una temperatura più bassa quando non 
 si è a casa.<br><br>
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato"></p>
+
 Quando è acceso il termostato, in qualsiasi modalità tranne la OFF, resterà acceso fino a quando non arriverà alla temperatura 
 impostata e si riaccenderà se la temperatura si riabbasserà. <br>
 La modalità ECO si attiva automaticamente all’ora impostata per poi ritornare alla modalità precedente e alla temperatura 
