@@ -19,9 +19,9 @@ Per installare questo package avrete bisogno di:<br>
 2. installare <a href="https://github.com/custom-cards/button-card">button-card, </a> <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod </a> e <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>  (da HACS)<br><br>
 
 <p align="center"/> <b>Installazione</b> <br> </p>
-Scaricare il file Pkg_cronotermostato_v1_1.zip e decomprimere i file. <br>
+Scaricare il file Pkg_cronotermostato_v1_2.zip e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
-Pkg_cronotermostato_v1_1.yaml nella cartella packages <br>
+Pkg_cronotermostato_v1_2.yaml nella cartella packages <br>
 blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
 Aprire il file Pkg_cronotermostato_v1_2.yaml ed effettuare le seguenti modifiche:<br>
