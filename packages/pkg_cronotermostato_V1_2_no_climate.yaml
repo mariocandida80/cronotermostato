@@ -482,6 +482,6 @@ automation:
 
                   Temperatura casa {{ states.sensor.sensore_temperature.state }} °C
 
-                  Temperatura impostata {{ state_attr('&termostato', 'temperature') }} °C
+                  Temperatura impostata {{ state_attr('climate.riscaldamento', 'temperature') }} °C
 
                   {% if is_state("input_select.modalita_termostato", "AUTO") %} Orario spegnimento {{ states.input_datetime.orario_spegnimento.state }}  {% elif is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} Orario spegnimento {{ states.input_datetime.orario_spegnimento.state }}  {% endif %}
