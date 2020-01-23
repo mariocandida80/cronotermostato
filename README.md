@@ -99,3 +99,5 @@ Dalla pagina iniziale, cliccando sull’icona  in alto a destra, si aprirà il m
 modalita AUTO e PRERISCALDAMENTO.<br>
 Qui potrete impostare l’orario di accensione e spegnimento del termostato.<br>
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
+
+Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a>
