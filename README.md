@@ -15,7 +15,7 @@ Vediamo come installarlo. <br>
 <p align="center"/> <b>Prerequisiti</b> <br> </p>
 Per funzionare ha bisogno di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
-1. aver configurato i packages<br>
+1. aver configurato <a href="https://hassiohelp.eu/2018/11/30/package-configurazione/">i packages</a><br>
 2. installare <a href="https://github.com/custom-cards/button-card">button-card, </a> <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod </a> e <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>  (da HACS)<br><br>
 
 <p align="center"/> <b>Installazione</b> <br> </p>
