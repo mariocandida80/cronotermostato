@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-1.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a>
+<img src="https://img.shields.io/badge/Versione-1.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a>
 <br> 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato">
 
