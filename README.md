@@ -13,13 +13,13 @@ modalità selezionabili dall’utente e che sia possibile accenderlo in determin
 Vediamo come installarlo. <br>
 <br>
 <p align="center"/> <b>Prerequisiti</b> <br> </p>
-Per funzionare ha bisogno di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
+Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
 1. aver configurato <a href="https://hassiohelp.eu/2018/11/30/package-configurazione/">i packages</a><br>
 2. installare <a href="https://github.com/custom-cards/button-card">button-card, </a> <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod </a> e <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>  (da HACS)<br><br>
 
-<p align="center"/> <b>Installazione</b> <br> </p>
-Scaricare il file Pkg_cronotermostato_v1_2.zip e decomprimere i file. <br>
+<p align="center"/> <b>Installazione con entità climate non pre installata</b> <br> </p>
+Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
 Pkg_cronotermostato_v1_2.yaml nella cartella packages <br>
 blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
@@ -32,6 +32,25 @@ Aprire il file Pkg_cronotermostato_v1_2.yaml ed effettuare le seguenti modifiche
 5. sostituire il servizio di notifica con il proprio (riga 16)<br>
 6. se non si ha già il sensor.time, togliere i commenti (righe da 102 a 105)<br>
 7. sostituire sensor.sensore_temperature con il proprio (riga 497)<br>
+8. se volete un’isteresi, ovvero che il termostato si spenga ad una temperatura superiore o che si riaccenda 
+ad una inferiore a quella impostata, dovrete modificare hot_tolerance e cold_tolerance. 
+Esempio: impostando la temperatura a 23 e impostando cold_tolerance a 2 e hot_tollerance a 0, il termostato si spegnerà 
+quando arriverà a 23 gradi e si riaccenderà a 21. Di default sono impostati cold_tolerance: 0.5 e hot_tolerance: 0.<br>
+Riavviare home assistant<br><br>
+
+<p align="center"/> <b>Installazione con entità climate già installata</b> <br> </p>
+Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
+Copiare i file in questo modo:<br>
+Pkg_cronotermostato_v1_2_no_climate.yaml nella cartella packages <br>
+blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
+
+Aprire il file Pkg_cronotermostato_v1_2_no_climate.yaml ed effettuare le seguenti modifiche:<br>
+1. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 12)<br>
+2. sostituire la zona home con la propria zona se è diversa (riga 13)<br>
+3. sostituire il servizio di notifica con il proprio (riga 14)<br>
+4. sostituire climate.termostato con il proprio (riga 15)<br>
+4. se non si ha già il sensor.time, togliere i commenti (righe da 88 a 91)<br>
+7. sostituire sensor.sensore_temperature con il proprio (riga 483)<br>
 8. se volete un’isteresi, ovvero che il termostato si spenga ad una temperatura superiore o che si riaccenda 
 ad una inferiore a quella impostata, dovrete modificare hot_tolerance e cold_tolerance. 
 Esempio: impostando la temperatura a 23 e impostando cold_tolerance a 2 e hot_tollerance a 0, il termostato si spegnerà 
