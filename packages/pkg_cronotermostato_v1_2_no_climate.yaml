@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package:: Cronotermostato
-        Version:: 1.2
+        Version:: 1.2.1
         Author:: MARIO @tlod80
 
 
@@ -32,6 +32,7 @@ input_select:
       - "ECO"
       - "PRERISCALDAMENTO"
 
+
 #Serve per tenere traccia quando si passa in automatico alla modalià ECO
 #in modo da ritornare alla modalità precedente
 
@@ -47,7 +48,12 @@ input_select:
     options:
       - "TERMOSTATO"
       - "ORARIO"
-      - "IMPOSTAZIONI"
+      - "ECO"
+
+  modalita_trk:
+    options:
+      - "SPEGNIMENTO"
+      - "ECO"
 
 input_datetime:
   orario_accensione:
@@ -86,6 +92,10 @@ input_number:
 
 
 sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+
   - platform: template
     sensors:
       temperatura_attuale:
@@ -93,9 +103,6 @@ sensor:
         value_template: "{{ state_attr('climate.termostato', 'current_temperature') }}"
         unit_of_measurement: °C
 
-#  - platform: time_date
-#    display_options:
-#      - 'time'
 
 script:
   auto:
@@ -297,6 +304,7 @@ automation:
         message: "Il termostato è stato spento. Buona giornata!"
 
 
+
   - id: 'temp term'
     alias: temperatura termostato
     trigger:
@@ -487,8 +495,124 @@ automation:
           message: >-
                   Modalità termostato {{ states.input_select.modalita_termostato.state }}
 
-                  Temperatura casa {{ states.sensor.sensore_temperature.state }} °C
+                  Temperatura casa {{ states.sensor.sonoff_10004b541f_temperature.state }} °C
 
-                  Temperatura impostata {{ state_attr('climate.riscaldamento', 'temperature') }} °C
+                  Temperatura impostata {{ state_attr('*termostato', 'temperature') }} °C
 
                   {% if is_state("input_select.modalita_termostato", "AUTO") %} Orario spegnimento {{ states.input_datetime.orario_spegnimento.state }}  {% elif is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} Orario spegnimento {{ states.input_datetime.orario_spegnimento.state }}  {% endif %}
+
+  - id: 'sincro temp'
+    alias: sincronizzazione temperatura
+    trigger:
+    - event: start
+      platform: homeassistant
+    action:
+    - service: automation.turn_off
+      data:
+        entity_id: automation.mess
+    - service: climate.turn_on
+      data:
+        entity_id: *termostato
+    - service: climate.turn_off
+      data:
+        entity_id: *termostato
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.modalita_termostato
+        option: 'OFF'
+    - service: automation.turn_on
+      data:
+        entity_id: automation.mess
+
+  - id: 'trk eco'
+    alias: passaggio ad eco in uscita
+    trigger:
+    - platform: state
+      entity_id: *tracker
+      from: *zona
+    condition:
+      - condition: state
+        entity_id: input_select.modalita_termostato
+        state: AUTO
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_termostato
+        option: ECO
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+    - service: *servizio
+      data:
+        title: ATTENZIONE
+        message: "Il termostato è in modalità ECO. Buona giornata!"
+
+  - id: 'accensione auto trk'
+    alias: accensione auto da eco
+    trigger:
+    - platform: state
+      entity_id: *tracker
+      to: *zona
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.modalita_termostato
+        state: ECO
+      - condition: state
+        entity_id: input_select.modalita_old
+        state: AUTO
+      - condition: template
+        value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+      - condition: or
+        conditions:
+          - condition: template
+            value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) > (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+          - condition: and
+            conditions:
+              - condition: template
+                value_template: "{{ (state_attr('input_datetime.orario_accensione', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+              - condition: template
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_termostato
+        option: AUTO
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+  - id: 'selezione trk 1'
+    alias: selezione trk spegn
+    trigger:
+    - platform: state
+      entity_id: input_select.modalita_trk
+      to: SPEGNIMENTO
+    action:
+    - service: automation.turn_off
+      entity_id: automation.accensione_auto_da_eco
+    - service: automation.turn_off
+      entity_id: automation.passaggio_ad_eco_in_uscita
+    - service: automation.turn_on
+      entity_id: automation.spegn_auto_trk
+    - service: automation.turn_on
+      entity_id: automation.accensione_auto_rientro
+
+  - id: 'selezione trk 2'
+    alias: selezione trk spegn
+    trigger:
+    - platform: state
+      entity_id: input_select.modalita_trk
+      to: ECO
+    action:
+    - service: automation.turn_off
+      entity_id: automation.spegn_auto_trk
+    - service: automation.turn_off
+      entity_id: automation.accensione_auto_rientro
+    - service: automation.turn_on
+      entity_id: automation.accensione_auto_da_eco
+    - service: automation.turn_on
+      entity_id: automation.passaggio_ad_eco_in_uscita
