@@ -2,7 +2,9 @@
 <br> 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato">
 
-
+<p align="center"/> <b>Change log V1.2.1:</b> <br> </p>
+Ora quando si esce di casa e si è in modalità auto, si ha la possibilità di scegliere se spegnere il termostato e riaccenderlo al rientro oppure passare alla modalità eco abbassando la temperatura e ripristinarla al rientro.<br>
+Non c'è più bisogno di configurare il sensore temperatura nella card lovelace.<br>
 <p align="center"/> <b>Change log V1.2:</b> <br> </p>
 Quando il termostato è in modalità manuale e si passa in modalità auto o preriscaldamento e l'ora è fuori dall'intervallo di tempo impostato per l'accensione (e anche il tracking per la modalità auto), il termostato si spegne per poi accendersi all'ora impostata.<br>
 In modalità auto se si esce di casa, il termostato si spegne ed invia un messaggio per avvisare del cambiamento di stato.<br>
@@ -59,8 +61,7 @@ Riavviare home assistant<br><br>
 <p align="center"/> <b>Per la configurazione della card:</b><br> </p>
 Per chi usa la modalità raw, creare una nuova card e copiare il contenuto di lovelace_raw.yaml.<br>
 Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il contenuto nel proprio file lovelace. <br>
-In entrambe le modalità dovrete sostituire sensor.temp con il vostro sensore e switch.caldaia (ce ne sono 2) con il
-vostro switch.<br><br>
+In entrambe le modalità dovrete sostituire switch.caldaia (ce ne sono 2) con il vostro switch.<br><br>
 <p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato"></p>
 Nella card principale vi ritroverete in alto a sinistra un ingranaggio che apre le impostazioni per la modalità ECO, 
