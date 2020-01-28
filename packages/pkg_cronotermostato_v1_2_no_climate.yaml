@@ -85,7 +85,14 @@ input_number:
     step: 0.5
 
 
-#sensor:
+sensor:
+  - platform: template
+    sensors:
+      temperatura_attuale:
+        friendly_name: "temperatura attuale"
+        value_template: "{{ state_attr('climate.termostato', 'current_temperature') }}"
+        unit_of_measurement: °C
+
 #  - platform: time_date
 #    display_options:
 #      - 'time'
