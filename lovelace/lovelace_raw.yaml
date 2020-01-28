@@ -1,7 +1,7 @@
 default: TERMOSTATO
 entity: input_select.visualizzazione
 states:
-  IMPOSTAZIONI:
+  ECO:
     elements:
       - entity: input_text.casella_vuota
         hold_action:
@@ -36,6 +36,13 @@ states:
             entity_id: input_select.visualizzazione
             option: TERMOSTATO
         type: icon
+      - entity: input_select.modalita_trk
+        style:
+          color: white
+          font-size: 150%
+          left: 70%
+          top: 25%
+        type: state-label
       - entity: input_datetime.orario_accensione_eco
         style:
           color: white
@@ -60,7 +67,24 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Orario accensione eco
+        prefix: Modalitò in uscita
+        style:
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 20%
+          right: 50%
+          text-align: left
+          top: 25%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Orario accensione
         style:
           color: white
           font-family: Trebuchet MS
@@ -77,7 +101,7 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Orario spegnimento eco
+        prefix: Orario spegnimento
         style:
           color: white
           font-family: Trebuchet MS
@@ -95,7 +119,7 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Temperatura eco
+        prefix: Temperatura
         style:
           color: white
           font-family: Trebuchet MS
@@ -165,7 +189,7 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Orario accensione
+        prefix: Oraio accensione
         style:
           border-radius: 6px
           color: white
@@ -185,7 +209,7 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Orario spegnimento
+        prefix: Oraio spegnimento
         style:
           border-radius: 6px
           color: white
@@ -241,9 +265,9 @@ states:
             option: ORARIO
         type: icon
       - entity: input_select.visualizzazione
-        icon: 'mdi:settings'
+        icon: 'mdi:leaf'
         style:
-          color: grey
+          color: green
           left: 5%
           top: 10%
         tap_action:
@@ -251,7 +275,7 @@ states:
           service: input_select.select_option
           service_data:
             entity_id: input_select.visualizzazione
-            option: IMPOSTAZIONI
+            option: ECO
         type: icon
       - entity: input_number.temperatura_termostato
         style:
@@ -260,7 +284,7 @@ states:
           left: 70%
           top: 50%
         type: state-label
-      - entity: sensor.temp
+      - entity: sensor.temperatura_attuale
         style:
           color: white
           font-size: 150%
@@ -423,6 +447,7 @@ states:
         image: /local/immagini/lovelace/fiamma.gif
         style:
           left: 90%
+          opacity: 50%
           top: 50%
         type: image
       - entity: switch.caldaia
@@ -445,7 +470,7 @@ states:
             - height: 45px
             - width: 45px
             - left: 30px
-            - top: '-200px'
+            - top: '-25px'
         tap_action:
           action: call-service
           service: automation.toggle
