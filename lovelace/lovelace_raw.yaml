@@ -43,14 +43,14 @@ states:
           left: 70%
           top: 25%
         type: state-label
-      - entity: input_datetime.orario_accensione_eco
+      - entity: input_datetime.orario_accensione_eco_term
         style:
           color: white
           font-size: 150%
           left: 70%
           top: 40%
         type: state-label
-      - entity: input_datetime.orario_spegnimento_eco
+      - entity: input_datetime.orario_spegnimento_eco_term
         style:
           color: white
           font-size: 150%
@@ -67,13 +67,13 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Modalitò in uscita
+        prefix: Modalità in uscita
         style:
           color: white
           font-family: Trebuchet MS
           font-size: 120%
           font-weight: bold
-          left: 20%
+          left: 10%
           right: 50%
           text-align: left
           top: 25%
@@ -90,7 +90,7 @@ states:
           font-family: Trebuchet MS
           font-size: 120%
           font-weight: bold
-          left: 20%
+          left: 10%
           right: 50%
           text-align: left
           top: 40%
@@ -107,7 +107,7 @@ states:
           font-family: Trebuchet MS
           font-size: 120%
           font-weight: bold
-          left: 20%
+          left: 10%
           pointer-events: auto
           right: 50%
           text-align: left
@@ -125,7 +125,7 @@ states:
           font-family: Trebuchet MS
           font-size: 120%
           font-weight: bold
-          left: 20%
+          left: 10%
           pointer-events: auto
           right: 50%
           text-align: left
@@ -172,31 +172,83 @@ states:
             entity_id: input_select.visualizzazione
             option: TERMOSTATO
         type: icon
-      - entity: input_datetime.orario_accensione
+      - entity: input_datetime.orario_accensione_term
         style:
           color: white
           font-size: 150%
-          left: 70%
-          top: 40%
+          left: 20%
+          top: 50%
         type: state-label
-      - entity: input_datetime.orario_spegnimento
+      - entity: input_datetime.orario_spegnimento_term
         style:
           color: white
           font-size: 150%
-          left: 70%
+          left: 20%
           top: 60%
+        type: state-label
+      - entity: input_datetime.orario_accensione_term2
+        style:
+          color: white
+          font-size: 150%
+          left: 50%
+          top: 50%
+        type: state-label
+      - entity: input_datetime.orario_spegnimento_term2
+        style:
+          color: white
+          font-size: 150%
+          left: 50%
+          top: 60%
+        type: state-label
+      - entity: input_datetime.orario_accensione_term3
+        style:
+          color: white
+          font-size: 150%
+          left: 80%
+          top: 50%
+        type: state-label
+      - entity: input_datetime.orario_spegnimento_term3
+        style:
+          color: white
+          font-size: 150%
+          left: 80%
+          top: 60%
+        type: state-label
+      - entity: input_boolean.accensione2
+        style:
+          color: white
+          font-size: 150%
+          left: 50%
+          top: 30%
+        tap_action:
+          action: call-service
+          service: input_boolean.toggle
+          service_data:
+            entity_id: input_boolean.accensione2
+        type: state-label
+      - entity: input_boolean.accensione3
+        style:
+          color: white
+          font-size: 150%
+          left: 80%
+          top: 30%
+        tap_action:
+          action: call-service
+          service: input_boolean.toggle
+          service_data:
+            entity_id: input_boolean.accensione3
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Oraio accensione
+        prefix: Fascia 1
         style:
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
           font-size: 120%
           font-weight: bold
-          left: 20%
+          left: 13%
           opacity: 0.8
           pointer-events: auto
           right: 50%
@@ -209,19 +261,39 @@ states:
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: Oraio spegnimento
+        prefix: Fascia 2
         style:
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
           font-size: 120%
           font-weight: bold
-          left: 20%
+          left: 43%
+          opacity: 0.8
+          pointer-events: auto
+          right: 40%
+          text-align: left
+          top: 40%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Fascia 3
+        style:
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 73%
           opacity: 0.8
           pointer-events: auto
           right: 50%
           text-align: left
-          top: 60%
+          top: 40%
           transform: 'translate(0%,-50%)'
         tap_action:
           action: none
