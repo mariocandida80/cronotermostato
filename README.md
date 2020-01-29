@@ -1,7 +1,8 @@
 <img src="https://img.shields.io/badge/Versione-1.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a>
 <br> 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/schermata_iniziale.png" alt="Immagine cronotermostato">
-
+<p align="center"/> <b>Change log V1.3:</b> <br> </p>
+Aggiunta la possibilità di inserire fino a 3 fasce orarie diverse in modalità auto.<br>
 <p align="center"/> <b>Change log V1.2.1:</b> <br> </p>
 Ora quando si esce di casa e si è in modalità auto, si ha la possibilità di scegliere se spegnere il termostato e riaccenderlo al rientro oppure passare alla modalità eco abbassando la temperatura e ripristinarla al rientro.<br>
 Non c'è più bisogno di configurare il sensore temperatura nella card lovelace.<br>
