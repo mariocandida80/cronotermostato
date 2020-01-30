@@ -712,7 +712,7 @@ automation:
           message: >-
                   Modalità termostato {{ states.input_select.modalita_termostato.state }}
 
-                  Temperatura casa {{ states.sensor.sonoff_10004b541f_temperature.state }} °C
+                  Temperatura casa {{ states.sensor.temperatura_attuale.state }} °C
 
                   Temperatura impostata {{ state_attr('*termostato', 'temperature') }} °C
 
