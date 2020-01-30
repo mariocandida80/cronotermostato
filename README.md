@@ -1,6 +1,6 @@
 <img src="https://img.shields.io/badge/Versione-1.3.1-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a>
 <br> 
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"><br>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
 Per chi ha già installato una versione precedente, sostituite il file fiamma.gif con quello nuovo che ha lo sfondo trasparente.<br>
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
 Questo package crea una serie di entità ed automazioni per fare in modo che il termostato funzioni in varie 
