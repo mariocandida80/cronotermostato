@@ -556,6 +556,10 @@ states:
         type: icon
       - entity: sensor.riscaldamento_hvac_action
         image: /local/immagini/lovelace/fiamma.gif
+        state_filter:
+          'off': brightness(50%) saturate(0.1)
+          idle: brightness(50%) saturate(0.1)
+          heat: brigtness(100%)
         style:
           left: 90%
           opacity: 50%
