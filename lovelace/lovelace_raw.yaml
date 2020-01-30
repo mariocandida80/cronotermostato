@@ -42,6 +42,11 @@ states:
           font-size: 150%
           left: 70%
           top: 25%
+        tap_action:
+          action: call-service
+          service: input_select.select_next
+          service_data:
+            entity_id: input_select.modalita_trk
         type: state-label
       - entity: input_datetime.orario_accensione_eco_term
         style:
@@ -134,6 +139,40 @@ states:
         tap_action:
           action: none
         type: state-label
+      - entity: input_number.temperatura_eco
+        hold_action:
+          action: call-service
+          service: input_number.increment
+          service_data:
+            entity_id: input_number.temperatura_eco
+        icon: 'mdi:arrow-up-bold-outline'
+        style:
+          color: white
+          left: 80%
+          top: 80%
+        tap_action:
+          action: call-service
+          service: input_number.increment
+          service_data:
+            entity_id: input_number.temperatura_eco
+        type: icon
+      - entity: input_number.temperatura_eco
+        hold_action:
+          action: call-service
+          service: input_number.decrement
+          service_data:
+            entity_id: input_number.temperatura_eco
+        icon: 'mdi:arrow-down-bold-outline'
+        style:
+          color: white
+          left: 85%
+          top: 80%
+        tap_action:
+          action: call-service
+          service: input_number.decrement
+          service_data:
+            entity_id: input_number.temperatura_eco
+        type: icon
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
   ORARIO:
@@ -487,7 +526,7 @@ states:
           service: input_number.increment
           service_data:
             entity_id: input_number.temperatura_termostato
-        icon: 'mdi:arrow-up'
+        icon: 'mdi:arrow-up-bold-outline'
         style:
           color: white
           left: 70%
@@ -504,7 +543,7 @@ states:
           service: input_number.decrement
           service_data:
             entity_id: input_number.temperatura_termostato
-        icon: 'mdi:arrow-down'
+        icon: 'mdi:arrow-down-bold-outline'
         style:
           color: white
           left: 70%
@@ -515,20 +554,13 @@ states:
           service_data:
             entity_id: input_number.temperatura_termostato
         type: icon
-      - entity: switch.caldaia
+      - entity: sensor.riscaldamento_hvac_action
         image: /local/immagini/lovelace/fiamma.gif
         style:
           left: 90%
           opacity: 50%
           top: 50%
         type: image
-      - entity: switch.caldaia
-        style:
-          left: 90%
-          top: 65%
-        tap_action:
-          action: none
-        type: state-label
       - color: blue
         entity: automation.mess
         icon: 'mdi:message'
