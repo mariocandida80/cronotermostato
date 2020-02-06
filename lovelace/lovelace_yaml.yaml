@@ -16,7 +16,6 @@
                   font-size: 120%
                   font-weight: bold
                   left: 10%
-                  pointer-events: auto
                   right: 10%
                   text-align: center
                   top: 10%
@@ -37,12 +36,24 @@
                     entity_id: input_select.visualizzazione
                     option: TERMOSTATO
                 type: icon
-              - entity: input_select.modalita_trk
+              - entity: input_boolean.eco_orario
                 style:
                   color: white
                   font-size: 150%
                   left: 70%
                   top: 25%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.eco_orario
+                type: state-label
+              - entity: input_select.modalita_trk
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 40%
                 tap_action:
                   action: call-service
                   service: input_select.select_next
@@ -54,21 +65,37 @@
                   color: white
                   font-size: 150%
                   left: 70%
-                  top: 40%
+                  top: 55%
                 type: state-label
               - entity: input_datetime.orario_spegnimento_eco_term
                 style:
                   color: white
                   font-size: 150%
                   left: 70%
-                  top: 60%
+                  top: 70%
                 type: state-label
               - entity: input_number.temperatura_eco
                 style:
                   color: white
                   font-size: 150%
                   left: 70%
-                  top: 80%
+                  top: 85%
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità ECO orario
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 25%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
                 type: state-label
               - entity: input_text.casella_vuota
                 hold_action:
@@ -80,9 +107,8 @@
                   font-size: 120%
                   font-weight: bold
                   left: 10%
-                  right: 50%
                   text-align: left
-                  top: 25%
+                  top: 40%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -97,9 +123,8 @@
                   font-size: 120%
                   font-weight: bold
                   left: 10%
-                  right: 50%
                   text-align: left
-                  top: 40%
+                  top: 55%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -115,9 +140,8 @@
                   font-weight: bold
                   left: 10%
                   pointer-events: auto
-                  right: 50%
                   text-align: left
-                  top: 60%
+                  top: 70%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -133,9 +157,8 @@
                   font-weight: bold
                   left: 10%
                   pointer-events: auto
-                  right: 50%
                   text-align: left
-                  top: 80%
+                  top: 85%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -149,8 +172,8 @@
                 icon: 'mdi:arrow-up-bold-outline'
                 style:
                   color: white
-                  left: 80%
-                  top: 80%
+                  left: 60%
+                  top: 85%
                 tap_action:
                   action: call-service
                   service: input_number.increment
@@ -166,8 +189,8 @@
                 icon: 'mdi:arrow-down-bold-outline'
                 style:
                   color: white
-                  left: 85%
-                  top: 80%
+                  left: 80%
+                  top: 85%
                 tap_action:
                   action: call-service
                   service: input_number.decrement
@@ -291,8 +314,7 @@
                   left: 13%
                   opacity: 0.8
                   pointer-events: auto
-                  right: 50%
-                  text-align: left
+                  text-align: center
                   top: 40%
                   transform: 'translate(0%,-50%)'
                 tap_action:
@@ -311,8 +333,7 @@
                   left: 43%
                   opacity: 0.8
                   pointer-events: auto
-                  right: 40%
-                  text-align: left
+                  text-align: center
                   top: 40%
                   transform: 'translate(0%,-50%)'
                 tap_action:
@@ -323,16 +344,14 @@
                   action: none
                 prefix: Fascia 3
                 style:
-                  border-radius: 6px
                   color: white
                   font-family: Trebuchet MS
                   font-size: 120%
                   font-weight: bold
-                  left: 73%
+                  left: 72%
                   opacity: 0.8
                   pointer-events: auto
-                  right: 50%
-                  text-align: left
+                  text-align: center
                   top: 40%
                   transform: 'translate(0%,-50%)'
                 tap_action:
@@ -558,9 +577,9 @@
               - entity: sensor.riscaldamento_hvac_action
                 image: /local/immagini/lovelace/fiamma.gif
                 state_filter:
-                  'off': brightness(50%) saturate(0.1)
-                  idle: brightness(50%) saturate(0.1)
                   heat: brigtness(100%)
+                  idle: brightness(50%) saturate(0.1)
+                  'off': brightness(50%) saturate(0.1)
                 style:
                   left: 90%
                   opacity: 50%
