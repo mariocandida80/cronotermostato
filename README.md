@@ -1,6 +1,10 @@
-<img src="https://img.shields.io/badge/Versione-1.3.1-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a>
+<img src="https://img.shields.io/badge/Versione-1.3.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a>
 <br> 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
+<p align="center"/> <b>Change log V1.3.2</b> <br> </p>
+Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
+Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app, si sincronizza anche con lovelace.<br>
+Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
 Per chi ha già installato una versione precedente, sostituite il file fiamma.gif con quello nuovo che ha lo sfondo trasparente.<br>
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
 Questo package crea una serie di entità ed automazioni per fare in modo che il termostato funzioni in varie 
