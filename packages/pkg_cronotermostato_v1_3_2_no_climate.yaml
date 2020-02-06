@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package:: Cronotermostato
-        Version:: 1.3.1
+        Version:: 1.3.2
         Author:: MARIO @tlod80
 
 
@@ -14,6 +14,7 @@ homeassistant:
         Servizio Notifica: &servizio 'notify.telegram'            #sostituire con il servizio di notifica
         Climate: &termostato 'climate.termostato'                 #sostituire con il prorio climate
     ##---------------------                           ---------------------##
+
 
 
 #Le modalità del termostato:
@@ -84,7 +85,8 @@ input_datetime:
 input_boolean:
   accensione2:
   accensione3:
-
+  eco_orario:
+    
 input_text:
   casella_vuota:
     initial: ' '
@@ -108,9 +110,9 @@ input_number:
 
 
 sensor:
-  - platform: time_date
-    display_options:
-      - 'time'
+#  - platform: time_date
+#    display_options:
+#      - 'time'
 
   - platform: template
     sensors:
@@ -119,12 +121,18 @@ sensor:
         value_template: "{{ state_attr('*termostato', 'current_temperature') }}"
         unit_of_measurement: °C
 
+  - platform: template
+    sensors:
+      temperatura_impostata:
+        friendly_name: "tenperatura inpostata"
+        value_template: "{{ state_attr('*termostato', 'temperature') }}"
+        
   - platform: attributes
     friendly_name: "interruttore_caldaia"
     attribute: hvac_action
     entities:
       - *termostato
-
+      
 script:
   auto:
     sequence:
@@ -143,12 +151,12 @@ script:
         data:
           entity_id: input_select.modalita_termostato
           option: PRERISCALDAMENTO
-
+        
 #   orario:
 #     sequence:
 #       - service: input_datetime.set_datetime
 #         entity_id: input_datetime.orario_accensione_term
-#         data_template:
+#         data_template: 
 #           value_template: "{{ state_attr('input_datetime.orario_accensione_term', 'timestamp') | int | timestamp_custom ('%H:%M',false) }}" + 1
 
 automation:
@@ -230,7 +238,7 @@ automation:
               - condition: template
                 value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
               - condition: template
-                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"    
           - condition: and
             conditions:
              - condition: state
@@ -250,7 +258,7 @@ automation:
               - condition: template
                 value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
               - condition: template
-                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"      
     action:
     - service: climate.turn_on
       data:
@@ -266,7 +274,7 @@ automation:
     - platform: template
       value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
     - platform: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"  
     - platform: template
       value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
     condition:
@@ -300,10 +308,10 @@ automation:
               - condition: template
                 value_template: "{{ (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
               - condition: template
-                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"  
               - condition: state
                 entity_id: input_boolean.accensione2
-                state: 'on'
+                state: 'on'    
           - condition: and
             conditions:
               - condition: template
@@ -316,10 +324,10 @@ automation:
               - condition: template
                 value_template: "{{ (state_attr('input_datetime.orario_accensione_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) < (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
               - condition: template
-                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+                value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"   
               - condition: state
                 entity_id: input_boolean.accensione3
-                state: 'on'
+                state: 'on'         
     action:
     - data:
         entity_id: *termostato
@@ -396,8 +404,8 @@ automation:
                 - condition: template
                   value_template: "{{ states('sensor.time') < (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
                 - condition: template
-                  value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
-    action:
+                  value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"            
+    action:  
     - data:
         entity_id: *termostato
       service: climate.turn_on
@@ -418,7 +426,7 @@ automation:
     - platform: template
       value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
     - platform: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"  
     condition:
     - condition: state
       entity_id: input_select.modalita_termostato
@@ -466,6 +474,16 @@ automation:
           entity_id: *termostato
           temperature: "{{ states('input_number.temperatura_termostato') }}"
           hvac_mode: heat
+  - id: 'sincro temp'
+    alias: sincro temperatura
+    trigger:
+    - platform: state
+      entity_id: sensor.temperatura_impostata
+    action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.temperatura_termostato
+        value: "{{ states('sensor.temperatura_impostata') }}"          
 #Modalità eco
   - id: 'mod eco'
     alias: modalità eco
@@ -501,14 +519,6 @@ automation:
           entity_id: input_select.modalita_termostato
           state: 'PRERISCALDAMENTO'
     action:
-      - service: input_number.set_value
-        data_template:
-          entity_id: input_number.temperatura_termostato_old
-          value: "{{ states('input_number.temperatura_termostato') }}"
-      - service: input_number.set_value
-        data_template:
-          entity_id: input_number.temperatura_termostato
-          value: "{{ states('input_number.temperatura_eco') }}"
       - service: input_select.select_option
         data_template:
           entity_id: input_select.modalita_termostato
@@ -536,6 +546,32 @@ automation:
         data_template:
           entity_id: input_select.modalita_termostato
           option: "{{ states('input_select.modalita_old')}}"
+  - id: 'auto eco on'
+    alias: auto eco on
+    trigger:
+      platform: state
+      entity_id: input_boolean.eco_orario
+      to: 'on'
+    action:
+      - service: automation.turn_on
+        data:
+          entity_id: automation.modalita_eco_auto
+      - service: automation.turn_on
+        data:
+          entity_id: automation.modalita_normale   
+  - id: 'auto eco off'
+    alias: auto eco off
+    trigger:
+      platform: state
+      entity_id: input_boolean.eco_orario
+      to: 'off'
+    action:
+      - service: automation.turn_off
+        data:
+          entity_id: automation.modalita_eco_auto
+      - service: automation.turn_off
+        data:
+          entity_id: automation.modalita_normale 
 #Modalità preriscaldamento
   - id: 'accensione pre'
     alias: preriscaldamento
@@ -625,7 +661,7 @@ automation:
       conditions:
       - condition: state
         entity_id: input_select.modalita_termostato
-        state: AUTO
+        state: PRERISCALDAMENTO
       - condition: or
         conditions:
           - condition: template
@@ -735,11 +771,11 @@ automation:
     - service: input_select.select_option
       data_template:
         entity_id: input_select.modalita_termostato
-        option: 'OFF'
+        option: "{{ states('input_select.modalita_old')}}"
     - service: automation.turn_on
       data:
         entity_id: automation.mess
-#automazioni tracker spegnimento ed eco
+#automazioni tracker spegnimento ed eco        
   - id: 'trk eco'
     alias: passaggio ad eco in uscita
     trigger:
@@ -788,7 +824,7 @@ automation:
       data:
         entity_id: input_select.modalita_old
         option: AUTO
-
+ 
   - id: 'selezione trk 1'
     alias: selezione trk spegn
     trigger:
@@ -804,7 +840,7 @@ automation:
       entity_id: automation.spegn_auto_trk
     - service: automation.turn_on
       entity_id: automation.accensione_auto_rientro
-
+  
   - id: 'selezione trk 2'
     alias: selezione trk eco
     trigger:
@@ -820,3 +856,5 @@ automation:
       entity_id: automation.accensione_auto_da_eco
     - service: automation.turn_on
       entity_id: automation.passaggio_ad_eco_in_uscita
+      
+      
