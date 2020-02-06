@@ -63,9 +63,6 @@ input_select:
       - "TERMOSTATO"
       - "ORARIO"
       - "ECO"
-      - "INFO_TERMOSTATO"
-      - "INFO_ORARIO"
-      - "INFO_ECO"
 
   modalita_trk:
     options:
