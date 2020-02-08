@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-1.3.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a>
+<img src="https://img.shields.io/badge/Versione-1.3.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="60" alt="Buy Me A Coffee">
 <br> 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
 <p align="center"/> <b>Change log V1.3.2</b> <br> </p>
@@ -93,4 +93,3 @@ Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci 
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
-<a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="60" alt="Buy Me A Coffee">
