@@ -93,4 +93,4 @@ Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci 
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
-<a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee">
+<a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="60" alt="Buy Me A Coffee">
