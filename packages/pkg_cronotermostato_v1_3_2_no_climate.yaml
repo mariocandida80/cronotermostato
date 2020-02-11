@@ -124,7 +124,7 @@ sensor:
   - platform: template
     sensors:
       temperatura_impostata:
-        friendly_name: "tenperatura inpostata"
+        friendly_name: "temperatura impostata"
         value_template: "{{ state_attr('*termostato', 'temperature') }}"
         
   - platform: attributes
