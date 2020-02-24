@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package:: Cronotermostato
-        Version:: 1.3.2
+        Version:: 1.3.3
         Author:: MARIO @tlod80
 
 
