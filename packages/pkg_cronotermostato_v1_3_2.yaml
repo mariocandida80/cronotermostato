@@ -870,4 +870,43 @@ automation:
     - service: automation.turn_on
       entity_id: automation.passaggio_ad_eco_in_uscita
       
-      
+# sincro con app esterna
+  - id: 'sincro spegnimento'
+    alias: sincro spegnimento
+    trigger:
+    - platform: state
+      entity_id: climate.riscaldamento
+      to: 'off'
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'MANUALE'
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'AUTO'   
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: 'PRERISCALDAMENTO'                 
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_termostato
+        option: 'OFF'      
+
+  - id: 'sincro accensione risc'
+    alias: sincro accensione risc
+    trigger:
+    - platform: state
+      entity_id: climate.riscaldamento
+      to: 'heat'
+    condition:
+      - condition: state
+        entity_id: input_select.modalita_termostato
+        state: 'OFF'             
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_termostato
+        option: 'MANUALE'               
