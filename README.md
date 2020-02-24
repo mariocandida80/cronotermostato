@@ -1,7 +1,14 @@
 <img src="https://img.shields.io/badge/Versione-1.3.2-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
+
+<p align="center"/> <b>Change log V1.3.3</b> <br> </p>
+
+Quando si accende o spegne il termostato da app esterna, viene sincronizzato anche su home Assistant impostando Manuale oppure off a seconda del caso.</p>
+Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 <p align="center"/> <b>Change log V1.3.2</b> <br> </p>
+
+
 Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
 Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app, si sincronizza anche con lovelace.<br>
 Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
