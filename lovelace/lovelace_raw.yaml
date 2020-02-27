@@ -585,12 +585,12 @@ states:
           top: 50%
         type: image
       - color: blue
-        entity: automation.mess
+        entity: automation.mess_term
         icon: 'mdi:message'
         show_name: false
         style: |
           ha-card {
-            background: {% if is_state("automation.mess", "on") %}  yellow;
+            background: {% if is_state("automation.mess_term", "on") %}  yellow;
             {% endif %}
         styles:
           card:
@@ -602,7 +602,7 @@ states:
           action: call-service
           service: automation.toggle
           service_data:
-            entity_id: automation.mess
+            entity_id: automation.mess_term
         type: 'custom:button-card'
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
