@@ -3,38 +3,38 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '1.3.3'
+        Version: '1.3.4'
         Author: 'MARIO @tlod80'
 
       expose: &expose
         <<: *customize
         haaska_hidden: false
-        homebridge_hidden: false
+        homebridge_hidden: false      
 
     climate.riscaldamento:
-      <<: *customize
+      <<: *customize 
     input_datetime.orario_accensione_term:
       <<: *customize
     input_datetime.orario_spegnimento_term:
-      <<: *customize
+      <<: *customize    
     input_number.temperatura_termostato:
-      <<: *customize
+      <<: *customize 
     input_number.temperatura_eco:
-      <<: *customize
+      <<: *customize 
     sensor.temperatura_attuale:
-      <<: *customize
+      <<: *customize 
     sensor.temperatura_impostata:
-      <<: *customize
+      <<: *customize 
     input_select.modalita_termostato:
       <<: *customize
 
     ##--------------------- IMPOSTAZIONI DEL PACKAGE ---------------------##
       setting:
-        Interruttore Caldaia: &caldaia 'switch.caldaia'           #sostituire con l'interruttore che attiva la caldaia
-        Sensore Temperatura: &sens_temp 'sensor.temperature'      #sostituire con il sensore della temperatura
-        Tracker: &tracker 'device_tracker.tracker'                #sostituire con il tracker
-        Zona_casa: &zona 'home'                                   #se non si hanno le zone lasciare 'home'
-        Servizio Notifica: &servizio 'notify.telegram'            #sostituire con il servizio di notifica
+        Interruttore Caldaia: &caldaia 'switch.sonoff_10004b541f'           #sostituire con l'interruttore che attiva la caldaia
+        Sensore Temperatura: &sens_temp 'sensor.sonoff_10004b541f_temperature'      #sostituire con il sensore della temperatura
+        Tracker: &tracker 'device_tracker.iphone7'
+        Zona_casa: &zona 'home'
+        Servizio Notifica: &servizio 'notify.mobile_app_iphone7'
 
     ##---------------------                           ---------------------##
 
@@ -50,8 +50,8 @@ climate:
     ac_mode: False
     hot_tolerance: 0
     cold_tolerance: 0.5
-
-
+  
+   
 
 #Le modalità del termostato:
 # OFF: termostato spento
@@ -68,7 +68,7 @@ input_select:
       - "MANUALE"
       - "ECO"
       - "PRERISCALDAMENTO"
-
+    
 
 
 #Serve per tenere traccia quando si passa in automatico alla modalià ECO
@@ -87,13 +87,14 @@ input_select:
       - "TERMOSTATO"
       - "ORARIO"
       - "ECO"
-
+      - "IMPOSTAZIONI"
+ 
 
   modalita_trk:
     options:
       - "SPEGNIMENTO"
       - "ECO"
-
+ 
 
 input_datetime:
   orario_accensione_term:
@@ -175,7 +176,7 @@ sensor:
     entities:
       - climate.riscaldamento
 
-
+      
 script:
   auto:
     sequence:
@@ -194,7 +195,7 @@ script:
         data:
           entity_id: input_select.modalita_termostato
           option: PRERISCALDAMENTO
-       
+        
 automation:
 #Modalità manuale
   - alias: modalità manuale term
@@ -788,6 +789,7 @@ automation:
     - service: climate.turn_on
       data:
         entity_id: climate.riscaldamento
+    - delay: '2'
     - service: climate.turn_off
       data:
         entity_id: climate.riscaldamento
@@ -892,13 +894,7 @@ automation:
       conditions:
         - condition: state
           entity_id: input_select.modalita_termostato
-          state: 'MANUALE'
-        - condition: state
-          entity_id: input_select.modalita_termostato
-          state: 'AUTO'   
-        - condition: state
-          entity_id: input_select.modalita_termostato
-          state: 'PRERISCALDAMENTO'                 
+          state: 'MANUALE'               
     action:
     - service: input_select.select_option
       data:
