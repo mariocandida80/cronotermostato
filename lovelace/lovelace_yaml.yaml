@@ -1,4 +1,5 @@
-  - cards:
+  - badges: []
+    cards:
       - default: TERMOSTATO
         entity: input_select.visualizzazione
         states:
@@ -36,82 +37,26 @@
                     entity_id: input_select.visualizzazione
                     option: TERMOSTATO
                 type: icon
-              - entity: input_boolean.eco_orario
-                style:
-                  color: white
-                  font-size: 150%
-                  left: 70%
-                  top: 25%
-                tap_action:
-                  action: call-service
-                  service: input_boolean.toggle
-                  service_data:
-                    entity_id: input_boolean.eco_orario
-                type: state-label
-              - entity: input_select.modalita_trk
-                style:
-                  color: white
-                  font-size: 150%
-                  left: 70%
-                  top: 40%
-                tap_action:
-                  action: call-service
-                  service: input_select.select_next
-                  service_data:
-                    entity_id: input_select.modalita_trk
-                type: state-label
               - entity: input_datetime.orario_accensione_eco_term
                 style:
                   color: white
                   font-size: 150%
                   left: 70%
-                  top: 55%
+                  top: 40%
                 type: state-label
               - entity: input_datetime.orario_spegnimento_eco_term
                 style:
                   color: white
                   font-size: 150%
                   left: 70%
-                  top: 70%
+                  top: 55%
                 type: state-label
               - entity: input_number.temperatura_eco
                 style:
                   color: white
                   font-size: 150%
                   left: 70%
-                  top: 85%
-                type: state-label
-              - entity: input_text.casella_vuota
-                hold_action:
-                  action: none
-                prefix: Modalità ECO orario
-                style:
-                  color: white
-                  font-family: Trebuchet MS
-                  font-size: 120%
-                  font-weight: bold
-                  left: 10%
-                  text-align: left
-                  top: 25%
-                  transform: 'translate(0%,-50%)'
-                tap_action:
-                  action: none
-                type: state-label
-              - entity: input_text.casella_vuota
-                hold_action:
-                  action: none
-                prefix: Modalità in uscita
-                style:
-                  color: white
-                  font-family: Trebuchet MS
-                  font-size: 120%
-                  font-weight: bold
-                  left: 10%
-                  text-align: left
-                  top: 40%
-                  transform: 'translate(0%,-50%)'
-                tap_action:
-                  action: none
+                  top: 70%
                 type: state-label
               - entity: input_text.casella_vuota
                 hold_action:
@@ -124,7 +69,7 @@
                   font-weight: bold
                   left: 10%
                   text-align: left
-                  top: 55%
+                  top: 40%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -141,7 +86,7 @@
                   left: 10%
                   pointer-events: auto
                   text-align: left
-                  top: 70%
+                  top: 55%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -158,7 +103,7 @@
                   left: 10%
                   pointer-events: auto
                   text-align: left
-                  top: 85%
+                  top: 70%
                   transform: 'translate(0%,-50%)'
                 tap_action:
                   action: none
@@ -173,7 +118,7 @@
                 style:
                   color: white
                   left: 60%
-                  top: 85%
+                  top: 70%
                 tap_action:
                   action: call-service
                   service: input_number.increment
@@ -190,7 +135,7 @@
                 style:
                   color: white
                   left: 80%
-                  top: 85%
+                  top: 70%
                 tap_action:
                   action: call-service
                   service: input_number.decrement
@@ -198,6 +143,126 @@
                     entity_id: input_number.temperatura_eco
                 type: icon
             image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          IMPOSTAZIONI:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Impostazioni
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_boolean.eco_orario
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 35%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.eco_orario
+                type: state-label
+              - entity: input_select.modalita_trk
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 50%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_next
+                  service_data:
+                    entity_id: input_select.modalita_trk
+                type: state-label
+              - entity: automation.mess_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 65%
+                tap_action:
+                  action: call-service
+                  service: automation.toggle
+                  service_data:
+                    entity_id: automation.mess_term
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità ECO orario
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 35%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità in uscita
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 50%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Invio messaggio
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 65%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/impostazioni.jpg
             type: picture-elements
           ORARIO:
             elements:
@@ -396,11 +461,24 @@
                     option: ORARIO
                 type: icon
               - entity: input_select.visualizzazione
+                icon: 'mdi:cogs'
+                style:
+                  color: grey
+                  left: 5%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: IMPOSTAZIONI
+                type: icon
+              - entity: input_select.visualizzazione
                 icon: 'mdi:leaf'
                 style:
                   color: green
-                  left: 5%
-                  top: 10%
+                  left: 95%
+                  top: 20%
                 tap_action:
                   action: call-service
                   service: input_select.select_option
@@ -412,7 +490,7 @@
                 style:
                   color: white
                   font-size: 150%
-                  left: 70%
+                  left: 80%
                   top: 50%
                 type: state-label
               - entity: sensor.temperatura_attuale
@@ -549,7 +627,7 @@
                 icon: 'mdi:arrow-up-bold-outline'
                 style:
                   color: white
-                  left: 70%
+                  left: 80%
                   top: 40%
                 tap_action:
                   action: call-service
@@ -566,7 +644,7 @@
                 icon: 'mdi:arrow-down-bold-outline'
                 style:
                   color: white
-                  left: 70%
+                  left: 80%
                   top: 60%
                 tap_action:
                   action: call-service
@@ -581,30 +659,10 @@
                   idle: brightness(50%) saturate(0.1)
                   'off': brightness(50%) saturate(0.1)
                 style:
-                  left: 90%
-                  opacity: 50%
+                  left: 50%
                   top: 50%
+                  width: 15%
                 type: image
-              - color: blue
-                entity: automation.mess_term
-                icon: 'mdi:message'
-                show_name: false
-                style: |
-                  ha-card {
-                    background: {% if is_state("automation.mess_term", "on") %}  yellow;
-                    {% endif %}
-                styles:
-                  card:
-                    - height: 45px
-                    - width: 45px
-                    - left: 30px
-                    - top: '-25px'
-                tap_action:
-                  action: call-service
-                  service: automation.toggle
-                  service_data:
-                    entity_id: automation.mess_term
-                type: 'custom:button-card'
             image: /local/immagini/lovelace/blu.jpg
             type: picture-elements
         type: 'custom:state-switch'
