@@ -1,9 +1,12 @@
 <img src="https://img.shields.io/badge/Versione-1.3.4-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
-<p align="center"/> <b>Change log V1.3.3</b> <br> </p>
+
+<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
 Nuova interfaccia grafica.
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.jpg" alt="Immagine cronotermostato"></p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.jpg" alt="Immagine cronotermostato"></p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_eco.jpg" alt="Immagine cronotermostato"></p>
 
 <p align="center"/> <b>Change log V1.3.3</b> <br> </p>
 
@@ -17,6 +20,7 @@ Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app,
 Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
 Per chi ha già installato una versione precedente, sostituite il file fiamma.gif con quello nuovo che ha lo sfondo trasparente.<br>
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
 Questo package crea una serie di entità ed automazioni per fare in modo che il termostato funzioni in varie 
 modalità selezionabili dall’utente e che sia possibile accenderlo in determinati orari e se si è o meno in casa. <br>
 Vediamo come installarlo. <br>
