@@ -3,7 +3,7 @@
 
 <p align="center"/> <b>Change log V1.3.4</b> <br> </p>
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
-Nuova interfaccia grafica.
+Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="pagina principale"></p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_eco.png" alt="nuova eco"></p>
