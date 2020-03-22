@@ -1,6 +1,6 @@
 <img src="https://img.shields.io/badge/Versione-1.3.4-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
-
+Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 <p align="center"/> <b>Change log V1.3.4</b> <br> </p>
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
 Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
@@ -13,7 +13,7 @@ Attenzione che per la nuova interfaccia bisogna aggiungere anche il file imposta
 <p align="center"/> <b>Change log V1.3.3</b> <br> </p>
 
 Quando si accende o spegne il termostato da app esterna, viene sincronizzato anche su home Assistant impostando Manuale oppure off a seconda del caso.</p>
-Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
+
 <p align="center"/> <b>Change log V1.3.2</b> <br> </p>
 
 
