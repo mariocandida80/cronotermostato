@@ -4,7 +4,6 @@ Per chi vuole la versione settimanale, può integrarla <a href="https://github.c
 <p align="center"/> <b>Change log V1.3.4</b> <br> </p>
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
 Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
-Purtroppo c'è un bug con la versione 107 che a volte non carica la scheda in lovelace. In attesa di un bugfix, potrete creare una scheda "picture-elements" vuota dove volete e si risolve il problema.
 Attenzione che per la nuova interfaccia bisogna aggiungere anche il file impostazioni.jpg nella stessa cartella degli altri 2 file.
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="pagina principale"></p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
