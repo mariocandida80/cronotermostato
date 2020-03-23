@@ -1,4 +1,3 @@
-  - badges: []
     cards:
       - default: TERMOSTATO
         entity: input_select.visualizzazione
