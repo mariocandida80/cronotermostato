@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '1.3.4'
+        Version: '1.3.5'
         Author: 'MARIO @tlod80'
 
       expose: &expose
@@ -186,6 +186,10 @@ script:
         data:
           entity_id: input_select.modalita_termostato
           option: AUTO
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.modalita_old
+          option: AUTO
 
   pre:
     sequence:
@@ -194,6 +198,10 @@ script:
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_termostato
+          option: PRERISCALDAMENTO
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.modalita_old
           option: PRERISCALDAMENTO
         
 automation:
@@ -309,7 +317,7 @@ automation:
     - platform: template
       value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"  
     - platform: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_accensione_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
     condition:
       condition: and
       conditions:
@@ -453,15 +461,55 @@ automation:
   - alias: spegnimento auto orario term
     trigger:
     - platform: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
-    - platform: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
-    - platform: template
-      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"  
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}" 
     condition:
     - condition: state
       entity_id: input_select.modalita_termostato
       state: AUTO
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+  - alias: spegnimento auto orario term2
+    trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term2', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: AUTO
+        - condition: state
+          entity_id: input_boolean.accensione2
+          state: 'on'
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: AUTO
+
+  - alias: spegnimento auto orario term3
+    trigger:
+    - platform: template
+      value_template: "{{ states('sensor.time') >= (state_attr('input_datetime.orario_spegnimento_term3', 'timestamp') | int | timestamp_custom('%H:%M', false)) }}"
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.modalita_termostato
+          state: AUTO
+        - condition: state
+          entity_id: input_boolean.accensione3
+          state: 'on'
     action:
     - data:
         entity_id: climate.riscaldamento
