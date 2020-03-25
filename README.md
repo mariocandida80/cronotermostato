@@ -1,37 +1,16 @@
 <img src="https://img.shields.io/badge/Versione-1.3.5-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
-<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
-Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
-Risolto bug che non faceva ritornare nella modalità precedente dalla modalità ECO.
 
-<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
-Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
-Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
-Attenzione che per la nuova interfaccia bisogna aggiungere anche il file impostazioni.jpg nella stessa cartella degli altri 2 file.
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="pagina principale"></p>
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_eco.png" alt="nuova eco"></p>
-
-<p align="center"/> <b>Change log V1.3.3</b> <br> </p>
-
-Quando si accende o spegne il termostato da app esterna, viene sincronizzato anche su home Assistant impostando Manuale oppure off a seconda del caso.</p>
-
-<p align="center"/> <b>Change log V1.3.2</b> <br> </p>
-
-
-Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
-Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app, si sincronizza anche con lovelace.<br>
-Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
-Per chi ha già installato una versione precedente, sostituite il file fiamma.gif con quello nuovo che ha lo sfondo trasparente.<br>
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
+<a href="#Prerequisiti">Prerequisiti</a>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
 Questo package crea una serie di entità ed automazioni per fare in modo che il termostato funzioni in varie 
 modalità selezionabili dall’utente e che sia possibile accenderlo in determinati orari e se si è o meno in casa. <br>
 Vediamo come installarlo. <br>
 <br>
 <p align="center"/> <b>Prerequisiti</b> <br> </p>
-Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
+<a name="Prerequisiti">Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
 1. aver configurato <a href="https://hassiohelp.eu/2018/11/30/package-configurazione/">i packages</a><br>
 2. installare <a href="https://github.com/custom-cards/button-card">button-card</a>, <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod</a>,  <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a> e <a href="https://github.com/pilotak/homeassistant-attributes"> attributes </a> (da HACS)<br><br>
@@ -112,3 +91,27 @@ Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci 
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
+
+<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
+Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
+Risolto bug che non faceva ritornare nella modalità precedente dalla modalità ECO.
+
+<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
+Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
+Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
+Attenzione che per la nuova interfaccia bisogna aggiungere anche il file impostazioni.jpg nella stessa cartella degli altri 2 file.
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="pagina principale"></p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_eco.png" alt="nuova eco"></p>
+
+<p align="center"/> <b>Change log V1.3.3</b> <br> </p>
+
+Quando si accende o spegne il termostato da app esterna, viene sincronizzato anche su home Assistant impostando Manuale oppure off a seconda del caso.</p>
+
+<p align="center"/> <b>Change log V1.3.2</b> <br> </p>
+
+
+Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
+Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app, si sincronizza anche con lovelace.<br>
+Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
+Per chi ha già installato una versione precedente, sostituite il file fiamma.gif con quello nuovo che ha lo sfondo trasparente.<br>
