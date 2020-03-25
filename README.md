@@ -1,6 +1,10 @@
-<img src="https://img.shields.io/badge/Versione-1.3.4-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
+<img src="https://img.shields.io/badge/Versione-1.3.5-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
+<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
+Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
+Risolto bug che non faceva ritornare nella modalità precedente dalla modalità ECO.
+
 <p align="center"/> <b>Change log V1.3.4</b> <br> </p>
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
 Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
