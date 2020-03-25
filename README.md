@@ -3,19 +3,22 @@
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
-<a href="#Prerequisiti">Prerequisiti</a>
+
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
 Questo package crea una serie di entità ed automazioni per fare in modo che il termostato funzioni in varie 
 modalità selezionabili dall’utente e che sia possibile accenderlo in determinati orari e se si è o meno in casa. <br>
 Vediamo come installarlo. <br>
 <br>
+<a href="#Prerequisiti">Prerequisiti</a>
+<a href="#Installazione1">Installazione con entità climate non pre installata</a>
+<a href="#Installazione2">Installazione con entità climate già installata</a>
 <a name="Prerequisiti"><p align="center"/> <b>Prerequisiti</b> <br> </p>
 Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
 1. aver configurato <a href="https://hassiohelp.eu/2018/11/30/package-configurazione/">i packages</a><br>
 2. installare <a href="https://github.com/custom-cards/button-card">button-card</a>, <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod</a>,  <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a> e <a href="https://github.com/pilotak/homeassistant-attributes"> attributes </a> (da HACS)<br><br>
 
-<p align="center"/> <b>Installazione con entità climate non pre installata</b> <br> </p>
+<a name="Installazione1"><p align="center"/><p align="center"/> <b>Installazione con entità climate non pre installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
 Pkg_cronotermostato_v1_3_1.yaml nella cartella packages <br>
@@ -34,7 +37,7 @@ Esempio: impostando la temperatura a 23 e impostando cold_tolerance a 2 e hot_to
 quando arriverà a 23 gradi e si riaccenderà a 21. Di default sono impostati cold_tolerance: 0.5 e hot_tolerance: 0.<br>
 Riavviare home assistant<br><br>
 
-<p align="center"/> <b>Installazione con entità climate già installata</b> <br> </p>
+<a name="Installazione2"><p align="center"/> <b>Installazione con entità climate già installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
 Pkg_cronotermostato_v1_3_1_no_climate.yaml nella cartella packages <br>
