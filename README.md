@@ -12,6 +12,9 @@ Vediamo come installarlo. <br>
 <a href="#Prerequisiti">Prerequisiti</a><br>
 <a href="#Installazione1">Installazione con entità climate non pre installata</a><br>
 <a href="#Installazione2">Installazione con entità climate già installata</a><br>
+<a href="#Confcard">Configurazione card</a><br>
+<a href="#Funfionamento">Funzionamento</a><br>
+<a href="#Changelog">Change log</a><br>
 <a name="Prerequisiti"><p align="center"/> <b>Prerequisiti</b> <br> </p>
 Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
@@ -50,11 +53,11 @@ Aprire il file Pkg_cronotermostato_v1_3_1_no_climate.yaml ed effettuare le segue
 4. sostituire climate.termostato con il proprio (riga 15)<br>
 5. se non si ha già il sensor.time, togliere i commenti (righe da 111 a 113)<br>
 Riavviare home assistant<br><br>
-<p align="center"/> <b>Per la configurazione della card:</b><br> </p>
+<a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
 Per chi usa la modalità raw, creare una nuova card e copiare il contenuto di lovelace_raw.yaml.<br>
 Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il contenuto nel proprio file lovelace. <br>
 <br>
-<p align="center"/> <b>Funzionamento</b><br> </p>
+<a name="Funzionamento"><p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
 Nella card principale vi ritroverete in alto a sinistra una fogliolina che apre le impostazioni per la modalità ECO, 
 in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e 
@@ -95,7 +98,7 @@ Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
 
-<p align="center"/> <b>Change log V1.3.4</b> <br> </p>
+<a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br> </p>
 Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
 Risolto bug che non faceva ritornare nella modalità precedente dalla modalità ECO.
 
