@@ -9,9 +9,9 @@ Questo package crea una serie di entità ed automazioni per fare in modo che il 
 modalità selezionabili dall’utente e che sia possibile accenderlo in determinati orari e se si è o meno in casa. <br>
 Vediamo come installarlo. <br>
 <br>
-<a href="#Prerequisiti">Prerequisiti</a>
-<a href="#Installazione1">Installazione con entità climate non pre installata</a>
-<a href="#Installazione2">Installazione con entità climate già installata</a>
+<a href="#Prerequisiti">Prerequisiti</a><br>
+<a href="#Installazione1">Installazione con entità climate non pre installata</a><br>
+<a href="#Installazione2">Installazione con entità climate già installata</a><br>
 <a name="Prerequisiti"><p align="center"/> <b>Prerequisiti</b> <br> </p>
 Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
 Per installare questo package avrete bisogno di:<br>
