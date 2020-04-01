@@ -24,16 +24,16 @@ Per installare questo package avrete bisogno di:<br>
 <a name="Installazione1"><p align="center"/><p align="center"/> <b>Installazione con entità climate non pre installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
-Pkg_cronotermostato_v1_3_1.yaml nella cartella packages <br>
+Pkg_cronotermostato_v1_3_6.yaml nella cartella packages <br>
 blu.jpg, impostazioni.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
-Aprire il file Pkg_cronotermostato_v1_3_1.yaml ed effettuare le seguenti modifiche:<br>
-1. sostituire switch.caldaia con lo switch che accende il termostato (riga 12)<br>
-2. sostituire sensor.temperature con il sensore della temperatura (riga 13)<br>
-3. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 14)<br>
-4. sostituire la zona home con la propria zona se è diversa (riga 15)<br>
-5. sostituire il servizio di notifica con il proprio (riga 16)<br>
-6. se non si ha già il sensor.time, togliere i commenti (righe da 126 a 128)<br>
+Aprire il file Pkg_cronotermostato_v1_3_6.yaml ed effettuare le seguenti modifiche:<br>
+1. sostituire switch.sonoff_10004b541f con lo switch che accende il termostato (riga 33)<br>
+2. sostituire sensor.sonoff_10004b541f_temperature con il sensore della temperatura (riga 34)<br>
+3. sostituire device_tracker.iphone7 con il proprio device_tracker (riga 35)<br>
+4. sostituire la zona home con la propria zona se è diversa (riga 36<br>
+5. sostituire il servizio di notifica con il proprio (riga 37)<br>
+6. se si ha già il sensor.time, commentarlo (righe da 156 a 158)<br>
 7. se volete un’isteresi, ovvero che il termostato si spenga ad una temperatura superiore o che si riaccenda 
 ad una inferiore a quella impostata, dovrete modificare hot_tolerance e cold_tolerance. 
 Esempio: impostando la temperatura a 23 e impostando cold_tolerance a 2 e hot_tollerance a 0, il termostato si spegnerà 
@@ -43,15 +43,15 @@ Riavviare home assistant<br><br>
 <a name="Installazione2"><p align="center"/> <b>Installazione con entità climate già installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
-Pkg_cronotermostato_v1_3_1_no_climate.yaml nella cartella packages <br>
-blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
+Pkg_cronotermostato_v1_3_6_no_climate.yaml nella cartella packages <br>
+blu.jpg, impostazioni.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
-Aprire il file Pkg_cronotermostato_v1_3_1_no_climate.yaml ed effettuare le seguenti modifiche:<br>
-1. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 12)<br>
-2. sostituire la zona home con la propria zona se è diversa (riga 13)<br>
-3. sostituire il servizio di notifica con il proprio (riga 14)<br>
-4. sostituire climate.termostato con il proprio (riga 15)<br>
-5. se non si ha già il sensor.time, togliere i commenti (righe da 111 a 113)<br>
+Aprire il file Pkg_cronotermostato_v1_3_6_no_climate.yaml ed effettuare le seguenti modifiche:<br>
+1. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 32)<br>
+2. sostituire la zona home con la propria zona se è diversa (riga 33)<br>
+3. sostituire il servizio di notifica con il proprio (riga 34)<br>
+4. sostituire climate.termostato con il proprio (riga 35)<br>
+5. se si ha già il sensor.time, commentarlo (righe da 138 a 140)<br>
 Riavviare home assistant<br><br>
 <a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
 Per chi usa la modalità raw, creare una nuova card e copiare il contenuto di lovelace_raw.yaml.<br>
@@ -59,12 +59,8 @@ Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il co
 <br>
 <a name="Funzionamento"><p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/principale.png" alt="Immagine cronotermostato"></p>
-Nella card principale vi ritroverete in alto a sinistra una fogliolina che apre le impostazioni per la modalità ECO, 
-in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e 
-PRERISCALDAMENTO, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che 
-potete modificare con le 2 frecce che sono posizionate sopra e sotto; affianco sulla destra viene indicato se al momento 
-il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziata
-in giallo.<br>In basso a sinistra c'è un'icona messaggio per attivare e disattivare le notifiche; quando è gialla è attivo il servizio.<br><br>
+Nella card principale vi ritroverete in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e PRERISCALDAMENTO, sotto troverete una fogliolina che apre le impostazioni per la modalità ECO, in alto a sinistra un ingranaggio per aprire le impostazioni, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che potete modificare con le 2 frecce che sono posizionate sopra e sotto; al centro viene indicato da una fiamma se al momento il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziatain giallo.<br><br>
+
 <p align="center"/> <b>Modalità di funzionamento</b><br> </p>
 Il termostato, è configurato per funzionare in 5 modalità:<br>
 
@@ -84,18 +80,21 @@ impostata e si riaccenderà se la temperatura si riabbasserà. <br>
 La modalità ECO si attiva automaticamente all’ora impostata per poi ritornare alla modalità precedente e alla temperatura 
 precedente una volta che arriva all’ora impostata per lo spegnimento della modalità ECO. È possibile anche attivarla 
 manualmente cliccando sul bottone ECO. Per disattivarla basta scegliere una modalità diversa e ritornerà anche la 
-temperatura impostata precedentemente.<br>
+temperatura impostata precedentemente. Volendo disattivare la modalità ECO con gli orari impostati, lo si potrà fare dal menù impostazioni.<br>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/eco.png"> </p>
-Dalla pagina iniziale, cliccando sulla fogliolina in alto a sinistra, si aprirà il menù impostazioni modalità eco.<br>
+Dalla pagina iniziale, cliccando sulla fogliolina in alto a destra, si aprirà il menù impostazioni modalità eco.<br>
 Qui potete inserire l’orario di accensione e spegnimento della modalità e la temperatura da impostare quando si attiverà 
-tale modalità. Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.<br>
+tale modalità.<br>
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br><br>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/orari.png"> </p>
 Dalla pagina iniziale, cliccando sull’icona  in alto a destra, si aprirà il menù impostazioni per l’accensione in 
 modalita AUTO e PRERISCALDAMENTO.<br>
-Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci sono 3 fasce orarie con possibilità di disabilitare le ultime 2 in caso si voglia far funzionare il termostato con fascia mono oraria.<br>
+Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci sono 3 fasce orarie con possibilità di disabilitare le ultime 2 in caso si voglia far funzionare il termostato con fascia mono-oraria o bi-oraria; basterà cliccare su acceso/spento sopra alla fascia.<br>
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
-
+Dalla pagina iniziale, cliccando sull’ingranaggio in alto a sinistra, si aprirà il menù impostazioni del termostato. 
+Da qui potrete scegliere se attivare o meno la modalità ECO con gli orari impostati.
+Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.
+Potete scegliere se ricevere o meno un messaggio all'accensione del termostato. <br>
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
 
 <a name="Changelog"><p align="center"/> <b>Change log V1.3.6</b> <br> </p>
