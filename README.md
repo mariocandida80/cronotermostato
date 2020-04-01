@@ -91,6 +91,7 @@ Dalla pagina iniziale, cliccando sull’icona  in alto a destra, si aprirà il m
 modalita AUTO e PRERISCALDAMENTO.<br>
 Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci sono 3 fasce orarie con possibilità di disabilitare le ultime 2 in caso si voglia far funzionare il termostato con fascia mono-oraria o bi-oraria; basterà cliccare su acceso/spento sopra alla fascia.<br>
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
 Dalla pagina iniziale, cliccando sull’ingranaggio in alto a sinistra, si aprirà il menù impostazioni del termostato. 
 Da qui potrete scegliere se attivare o meno la modalità ECO con gli orari impostati.
 Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.
