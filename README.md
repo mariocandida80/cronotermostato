@@ -25,7 +25,7 @@ Per installare questo package avrete bisogno di:<br>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
 Pkg_cronotermostato_v1_3_1.yaml nella cartella packages <br>
-blu.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
+blu.jpg, impostazioni.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
 Aprire il file Pkg_cronotermostato_v1_3_1.yaml ed effettuare le seguenti modifiche:<br>
 1. sostituire switch.caldaia con lo switch che accende il termostato (riga 12)<br>
