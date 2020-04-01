@@ -99,6 +99,8 @@ Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
 
 <a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br> </p>
+Risolto bug che quando si cambia una fascia oraria con modalità AUTO già inserita, verifica che sia nella fascia di accensione o spegnimento. 
+<a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br> </p>
 Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
 Risolto bug che non faceva ritornare nella modalità precedente dalla modalità ECO.
 
