@@ -96,7 +96,7 @@ Dalla pagina iniziale, cliccando sull’ingranaggio in alto a sinistra, si aprir
 Da qui potrete scegliere se attivare o meno la modalità ECO con gli orari impostati.<br>
 Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.<br>
 L'ultima ozione serve per scegliere se ricevere o meno un messaggio all'accensione del termostato. <br>
-Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
+Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
 <a name="Changelog"><p align="center"/> <b>Change log V1.3.6</b> <br> </p>
 Risolto bug che quando si cambia una fascia oraria con modalità AUTO già inserita, verifica che sia nella fascia di accensione o spegnimento. 
