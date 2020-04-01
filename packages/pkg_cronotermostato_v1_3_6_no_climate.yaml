@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '1.3.5'
+        Version: '1.3.6'
         Author: 'MARIO @tlod80'
 
       expose: &expose
@@ -168,6 +168,7 @@ script:
         data:
           entity_id: input_select.modalita_termostato
           option: AUTO
+      - delay: '2'
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_old
@@ -975,6 +976,9 @@ automation:
         entity_id: automation.mess_term
     - service: automation.turn_off
       data:
+        entity_id: automation.modalita_off_term
+    - service: automation.turn_off
+      data:
         entity_id: automation.sincro_accensione_risc_term      
     - service: automation.turn_off
       data:
@@ -989,7 +993,14 @@ automation:
     - service: input_select.select_option
       data_template:
         entity_id: input_select.modalita_termostato
+        option: 'OFF'
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.modalita_termostato
         option: "{{ states('input_select.modalita_old')}}"
+    - service: automation.turn_on
+      data:
+        entity_id: automation.modalita_off_term
     - service: automation.turn_on
       data:
         entity_id: automation.mess_term
