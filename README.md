@@ -92,10 +92,10 @@ modalita AUTO e PRERISCALDAMENTO.<br>
 Qui potrete impostare l’orario di accensione e spegnimento del termostato. Ci sono 3 fasce orarie con possibilità di disabilitare le ultime 2 in caso si voglia far funzionare il termostato con fascia mono-oraria o bi-oraria; basterà cliccare su acceso/spento sopra alla fascia.<br>
 Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
-Dalla pagina iniziale, cliccando sull’ingranaggio in alto a sinistra, si aprirà il menù impostazioni del termostato. 
-Da qui potrete scegliere se attivare o meno la modalità ECO con gli orari impostati.
-Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.
-Potete scegliere se ricevere o meno un messaggio all'accensione del termostato. <br>
+Dalla pagina iniziale, cliccando sull’ingranaggio in alto a sinistra, si aprirà il menù impostazioni del termostato. <br>
+Da qui potrete scegliere se attivare o meno la modalità ECO con gli orari impostati.<br>
+Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.<br>
+L'ultima ozione serve per scegliere se ricevere o meno un messaggio all'accensione del termostato. <br>
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
 
 <a name="Changelog"><p align="center"/> <b>Change log V1.3.6</b> <br> </p>
@@ -108,9 +108,6 @@ Risolto bug che non faceva ritornare nella modalità precedente dalla modalità 
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
 Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
 Attenzione che per la nuova interfaccia bisogna aggiungere anche il file impostazioni.jpg nella stessa cartella degli altri 2 file.
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="pagina principale"></p>
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_impostazioni.png" alt="nuova impostazioni"></p>
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_eco.png" alt="nuova eco"></p>
 
 <p align="center"/> <b>Change log V1.3.3</b> <br> </p>
 
