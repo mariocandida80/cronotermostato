@@ -81,7 +81,7 @@ La modalità ECO si attiva automaticamente all’ora impostata per poi ritornare
 precedente una volta che arriva all’ora impostata per lo spegnimento della modalità ECO. È possibile anche attivarla 
 manualmente cliccando sul bottone ECO. Per disattivarla basta scegliere una modalità diversa e ritornerà anche la 
 temperatura impostata precedentemente. Volendo disattivare la modalità ECO con gli orari impostati, lo si potrà fare dal menù impostazioni.<br>
-<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/eco.png"> </p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_eco.png"> </p>
 Dalla pagina iniziale, cliccando sulla fogliolina in alto a destra, si aprirà il menù impostazioni modalità eco.<br>
 Qui potete inserire l’orario di accensione e spegnimento della modalità e la temperatura da impostare quando si attiverà 
 tale modalità.<br>
