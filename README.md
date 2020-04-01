@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-1.3.5-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
+<img src="https://img.shields.io/badge/Versione-1.3.6-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 
@@ -98,7 +98,7 @@ Cliccando sulla freccia in alto a destra si tornerà alla pagina iniziale.<br>
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
 
-<a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br> </p>
+<a name="Changelog"><p align="center"/> <b>Change log V1.3.6</b> <br> </p>
 Risolto bug che quando si cambia una fascia oraria con modalità AUTO già inserita, verifica che sia nella fascia di accensione o spegnimento. 
 <a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br> </p>
 Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
