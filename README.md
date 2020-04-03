@@ -13,7 +13,7 @@ Vediamo come installarlo. <br>
 <a href="#Installazione1">Installazione con entità climate non pre installata</a><br>
 <a href="#Installazione2">Installazione con entità climate già installata</a><br>
 <a href="#Confcard">Configurazione card</a><br>
-<a href="#Funfionamento">Funzionamento</a><br>
+<a href="#Funzionamento">Funzionamento</a><br>
 <a href="#Changelog">Change log</a><br>
 <a name="Prerequisiti"><p align="center"/> <b>Prerequisiti</b> <br> </p>
 Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 entità: uno switch che attivi e disattivi il termostato ed un sensore di temperatura. <br>
