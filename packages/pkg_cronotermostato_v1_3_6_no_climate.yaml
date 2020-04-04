@@ -165,11 +165,11 @@ script:
     sequence:
       - service: climate.turn_off
         entity_id: *termostato
+      - delay: '1'
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_termostato
           option: AUTO
-      - delay: '2'
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_old
@@ -179,6 +179,7 @@ script:
     sequence:
       - service: climate.turn_off
         entity_id: *termostato
+      - delay: '1'
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_termostato
