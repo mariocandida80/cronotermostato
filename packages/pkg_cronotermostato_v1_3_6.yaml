@@ -182,11 +182,11 @@ script:
     sequence:
       - service: climate.turn_off
         entity_id: climate.riscaldamento
+      - delay: '1'
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_termostato
-          option: AUTO
-      - delay: '2'
+          option: AUTO      
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_old
@@ -196,6 +196,7 @@ script:
     sequence:
       - service: climate.turn_off
         entity_id: climate.riscaldamento
+      - delay: '1'
       - service: input_select.select_option
         data:
           entity_id: input_select.modalita_termostato
