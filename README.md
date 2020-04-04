@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-1.3.6-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a> <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a>  
+<img src="https://img.shields.io/badge/Versione-2.0-green">  <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a> <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a>  
 <br> 
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 
@@ -62,7 +62,8 @@ Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il co
 <br>
 <a name="Funzionamento"><p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="Immagine cronotermostato"></p>
-Nella card principale vi ritroverete in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e PRERISCALDAMENTO, sotto troverete una fogliolina che apre le impostazioni per la modalità ECO, in alto a sinistra un ingranaggio per aprire le impostazioni, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che potete modificare con le 2 frecce che sono posizionate sopra e sotto; al centro viene indicato da una fiamma se al momento il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziatain giallo.<br><br>
+Nella card principale vi ritroverete in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e PRERISCALDAMENTO, sotto troverete una fogliolina che apre le impostazioni per la modalità ECO, in alto a sinistra un ingranaggio per aprire le impostazioni, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che potete modificare con le 2 frecce che sono posizionate sopra e sotto; al centro viene indicato da una fiamma se al momento il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziatain giallo.<br>
+Ogni giorno alle ore 18:00 viene controllato se c'è un aggiornamento che verrà segnalato con un'icona bianca in alto a destra<br>
 
 <p align="center"/> <b>Modalità di funzionamento</b><br> </p>
 Il termostato, è configurato per funzionare in 5 modalità:<br>
