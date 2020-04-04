@@ -311,7 +311,7 @@
                   color: white
                   font-size: 150%
                   left: 20%
-                  top: 60%
+                  top: 65%
                 type: state-label
               - entity: input_datetime.orario_accensione_term2
                 style:
@@ -325,7 +325,7 @@
                   color: white
                   font-size: 150%
                   left: 50%
-                  top: 60%
+                  top: 65%
                 type: state-label
               - entity: input_datetime.orario_accensione_term3
                 style:
@@ -339,7 +339,7 @@
                   color: white
                   font-size: 150%
                   left: 80%
-                  top: 60%
+                  top: 65%
                 type: state-label
               - entity: input_boolean.accensione2
                 style:
@@ -662,6 +662,82 @@
                   top: 50%
                   width: 15%
                 type: image
+              - type: conditional
+                conditions:
+                  - entity: input_boolean.versione_term
+                    state: 'on'
+                elements:
+                  - type: icon
+                    entity: input_boolean.versione_term
+                    icon: 'mdi:update'
+                    tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      service_data:
+                        entity_id: input_select.visualizzazione
+                        option: AGGIORNAMENTO
+                    style:
+                      left: 95%
+                      top: 30%
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          AGGIORNAMENTO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Aggiornamento disponibile
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Clicca qui per andare alla repo
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 50%
+                  left: 20%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: url
+                  url_path: 'https://github.com/mariocandida80/cronotermostato'
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
             image: /local/immagini/lovelace/blu.jpg
             type: picture-elements
         type: 'custom:state-switch'
