@@ -63,7 +63,7 @@ Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il co
 <a name="Funzionamento"><p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="Immagine cronotermostato"></p>
 Nella card principale vi ritroverete in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e PRERISCALDAMENTO, sotto troverete una fogliolina che apre le impostazioni per la modalità ECO, in alto a sinistra un ingranaggio per aprire le impostazioni, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che potete modificare con le 2 frecce che sono posizionate sopra e sotto; al centro viene indicato da una fiamma se al momento il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziatain giallo.<br>
-Ogni giorno alle ore 18:00 viene controllato se c'è un aggiornamento che verrà segnalato con un'icona bianca in alto a destra<br>
+Ogni giorno alle ore 18:00 viene controllato se c'è un aggiornamento che verrà segnalato con un'icona bianca in alto a destra; cliccandoci si aprirà una pagina con il link del package.<br>
 
 <p align="center"/> <b>Modalità di funzionamento</b><br> </p>
 Il termostato, è configurato per funzionare in 5 modalità:<br>
