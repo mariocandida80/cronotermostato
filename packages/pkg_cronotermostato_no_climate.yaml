@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '2_2'
+        Version: '2_3'
         Author: 'MARIO @tlod80'
 
       expose: &expose
@@ -34,6 +34,7 @@ homeassistant:
         Servizio Notifica: &servizio 'notify.telegram'            #sostituire con il servizio di notifica
         Climate: &termostato 'climate.termostato'                 #sostituire con il prorio climate
     ##---------------------                           ---------------------##
+
 
 #Le modalità del termostato:
 # OFF: termostato spento
@@ -145,6 +146,11 @@ sensor:
     name: Versione cronotermostato
     value_template: '{{ value_json.versione }}'
 
+  - platform: rest
+    resource: https://raw.githubusercontent.com/mariocandida80/cronotermostato/master/versione.json
+    name: tipo aggiornamento cronotermostato
+    value_template: '{{ value_json.cosa_aggiornare }}'
+
   - platform: template
     sensors:
       temperatura_attuale:
@@ -163,6 +169,8 @@ sensor:
     entities:
       - *termostato
 
+downloader:
+  download_dir: packages
       
 script:
   auto:
@@ -192,6 +200,21 @@ script:
         data:
           entity_id: input_select.modalita_old
           option: PRERISCALDAMENTO     
+          overwrite: true
+
+  download_pkg:
+    sequence:
+      - service: downloader.download_file
+        data:
+          url: 'https://raw.githubusercontent.com/mariocandida80/cronotermostato/master/packages/pkg_cronotermostato.yaml'
+          overwrite: true
+
+  download_pkg_no:
+    sequence:
+      - service: downloader.download_file
+        data:
+          url: 'https://github.com/mariocandida80/cronotermostato/blob/master/packages/pkg_cronotermostato_no_climate.yaml'
+          overwrite: true
 
 automation:
 #Modalità manuale
