@@ -106,9 +106,10 @@ Quando compare l'icona aggiornamento sulla pagina centrale, cliccandoci sopra si
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
-
+<a name="Changelog"><p align="center"/> <b>Change log V2.3</b> <br> </p>
+Aggiunta la possibilità di scaricare il package direttamente da lovelace.
 <a name="Changelog"><p align="center"/> <b>Change log V2.2</b> <br> </p>
-Risolto problema in cui alcune volte il termostato in modalità auto partiva anche se la fascia oraria era disattivata..
+Risolto problema in cui alcune volte il termostato in modalità auto partiva anche se la fascia oraria era disattivata.
 <a name="Changelog"><p align="center"/> <b>Change log V2.0</b> <br> </p>
 Aggiunta una notifica quando ci sono nuovi aggiornamenti.
 Bug fix
