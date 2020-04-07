@@ -1,6 +1,145 @@
 default: TERMOSTATO
 entity: input_select.visualizzazione
 states:
+  AGGIORNAMENTO:
+    elements:
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Aggiornamento disponibile
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 10%
+          opacity: 0.8
+          pointer-events: auto
+          right: 10%
+          text-align: center
+          top: 10%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: sensor.tipo_aggiornamento_cronotermostato
+        hold_action:
+          action: none
+        style:
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          left: 10%
+          pointer-events: auto
+          text-align: left
+          top: 30%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: url
+          url_path: 'https://github.com/mariocandida80/cronotermostato'
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Scarica il package
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 35%
+          opacity: 0.8
+          pointer-events: auto
+          text-align: center
+          top: 45%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.download_pkg
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Scarica il package no_climate
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 25%
+          opacity: 0.8
+          pointer-events: auto
+          text-align: center
+          top: 60%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.download_pkg_no
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Vai alla repo
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 40%
+          opacity: 0.8
+          pointer-events: auto
+          text-align: center
+          top: 80%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: url
+          url_path: 'https://github.com/mariocandida80/cronotermostato'
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: >-
+          Ricorda di inserire le tue entità.Lovelace, se bisogna aggiornarlo, va
+          fatto in manuale.
+        style:
+          color: white
+          font-family: Trebuchet MS
+          font-size: 80%
+          left: 1%
+          pointer-events: auto
+          text-align: left
+          top: 90%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_select.visualizzazione
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: green
+          left: 95%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione
+            option: TERMOSTATO
+        type: icon
+    image: /local/immagini/lovelace/blu.jpg
+    type: picture-elements
   ECO:
     elements:
       - entity: input_text.casella_vuota
@@ -661,82 +800,23 @@ states:
           top: 50%
           width: 15%
         type: image
-      - type: conditional
-        conditions:
+      - conditions:
           - entity: input_boolean.versione_term
             state: 'on'
         elements:
-          - type: icon
-            entity: input_boolean.versione_term
+          - entity: input_boolean.versione_term
             icon: 'mdi:update'
+            style:
+              left: 95%
+              top: 30%
             tap_action:
               action: call-service
               service: input_select.select_option
               service_data:
                 entity_id: input_select.visualizzazione
                 option: AGGIORNAMENTO
-            style:
-              left: 95%
-              top: 30%
-    image: /local/immagini/lovelace/blu.jpg
-    type: picture-elements
-  AGGIORNAMENTO:
-    elements:
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Aggiornamento disponibile
-        style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
-          border-radius: 6px
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          font-weight: bold
-          left: 10%
-          opacity: 0.8
-          pointer-events: auto
-          right: 10%
-          text-align: center
-          top: 10%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: none
-        type: state-label
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Clicca qui per andare alla repo
-        style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
-          border-radius: 6px
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          font-weight: bold
-          opacity: 0.8
-          pointer-events: auto
-          text-align: center
-          top: 50%
-          left: 20%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: url
-          url_path: 'https://github.com/mariocandida80/cronotermostato'
-        type: state-label
-      - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
-        style:
-          color: green
-          left: 95%
-          top: 10%
-        tap_action:
-          action: call-service
-          service: input_select.select_option
-          service_data:
-            entity_id: input_select.visualizzazione
-            option: TERMOSTATO
-        type: icon
+            type: icon
+        type: conditional
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
 type: 'custom:state-switch'
