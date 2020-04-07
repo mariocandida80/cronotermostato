@@ -100,7 +100,12 @@ Dalla pagina iniziale, cliccando sull’ingranaggio in alto a sinistra, si aprir
 Da qui potrete scegliere se attivare o meno la modalità ECO con gli orari impostati.<br>
 Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO ed uscite di casa; le modalità sono 2: SPEGNIMENTO e ECO. La prima spegne il termostato per riaccenderlo al vostro rientro; la seconda lascia il termostato acceso abbassando la temperatura a quella ECO per poi ripristinare la temperatura precedente al rientro.<br>
 L'ultima ozione serve per scegliere se ricevere o meno un messaggio all'accensione del termostato. <br>
+
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/aggiornamento.png" alt="aggiornamenti"></p>
+Quando compare l'icona aggiornamento sulla pagina centrale, cliccandoci sopra si aprirà la pagina degli aggiornamenti. Di volta in volta verrà avvisato se basterà aggiornare solo il package o anche la parte lovelace, ovviamente dalla versione precedente. Da qui basterà cliccare su scarica il package o scarica il package_no_climate, in base al tipo di instalazione e vi ritroverete la nuova release. Ricordatevi di cambiare le entità nella parte setup. Per la parte lovelace, dovrà essere aggiornata manualmente, se dovesse essercene bisogno.<br>
+
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
+
 
 <a name="Changelog"><p align="center"/> <b>Change log V2.2</b> <br> </p>
 Risolto problema in cui alcune volte il termostato in modalità auto partiva anche se la fascia oraria era disattivata..
