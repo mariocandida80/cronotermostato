@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-2.2-green"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"> <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a>  <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a> 
+<img src="https://img.shields.io/badge/Versione-2.4-green"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"> <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a>  <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a> 
 <br>
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 
@@ -106,6 +106,9 @@ Quando compare l'icona aggiornamento sulla pagina principale, cliccandoci sopra 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20ok.png" alt="messaggio ok"><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20not%20ok.png" alt="messaggio not ok"></p>
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
+<a name="Changelog"><p align="center"/> <b>Change log V2.4</b> <br> </p>
+Ora è possibile scaricare il package direttamente da lovelace sia per la versione standard e sia per la versione no_climate.
+Esito ok o not ok al termine del download con possibilità di riavviare da lovelace dopo il download.
 <a name="Changelog"><p align="center"/> <b>Change log V2.3</b> <br> </p>
 Aggiunta la possibilità di scaricare il package direttamente da lovelace.
 <a name="Changelog"><p align="center"/> <b>Change log V2.2</b> <br> </p>
