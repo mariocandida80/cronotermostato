@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '2_3'
+        Version: '2_4'
         Author: 'MARIO @tlod80'
 
       expose: &expose
@@ -34,6 +34,7 @@ homeassistant:
         Servizio Notifica: &servizio 'notify.telegram'            #sostituire con il servizio di notifica
         Climate: &termostato 'climate.termostato'                 #sostituire con il prorio climate
     ##---------------------                           ---------------------##
+
 
 
 #Le modalità del termostato:
@@ -72,8 +73,9 @@ input_select:
       - "ECO"
       - "IMPOSTAZIONI"
       - "AGGIORNAMENTO"
+      - "MESS_OK"
+      - "MESS_NOT_OK"
  
-
   modalita_trk:
     options:
       - "SPEGNIMENTO"
@@ -1223,6 +1225,10 @@ automation:
       platform: homeassistant
     action:
     - delay: '5'
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione
+        option: TERMOSTATO
     - service: automation.turn_off
       data:
         entity_id: automation.mess_term
@@ -1402,6 +1408,26 @@ automation:
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.versione_term  
+
+  - alias: download ok term
+    trigger: 
+    - platform: event
+      event_type: downloader_download_completed
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione
+        option: MESS_OK
+
+  - alias: download not ok term
+    trigger: 
+    - platform: event
+      event_type: downloader_download_failed
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione
+        option: MESS_NOT_OK
 
 #spegnimento pulsanti fasce
   - alias: spegnimento fascia2 term
