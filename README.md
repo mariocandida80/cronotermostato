@@ -63,7 +63,7 @@ Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il co
 <a name="Funzionamento"><p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="Immagine cronotermostato"></p>
 Nella card principale vi ritroverete in alto a destra un pulsante per aprire le impostazioni degli orari di accensione e spegnimento per la modalità AUTO e PRERISCALDAMENTO, sotto troverete una fogliolina che apre le impostazioni per la modalità ECO, in alto a sinistra un ingranaggio per aprire le impostazioni, al centro a sinistra c’è la temperatura del vostro sensore mentre a destra la temperatura impostata che potete modificare con le 2 frecce che sono posizionate sopra e sotto; al centro viene indicato da una fiamma se al momento il termostato è acceso o spento; in basso ci sono le 5 modalità di funzionamento; la modalità selezionata sarà evidenziatain giallo.<br>
-Ogni giorno alle ore 18:00 viene controllato se c'è un aggiornamento che verrà segnalato con un'icona bianca in alto a destra; cliccandoci si aprirà una pagina con il link del package.<br>
+Ogni giorno alle ore 18:00 e ad ogni riavvio, viene controllato se c'è un aggiornamento che verrà segnalato con un'icona bianca in alto a destra; cliccandoci si aprirà la schermata per aggiornare il package.<br>
 
 <p align="center"/> <b>Modalità di funzionamento</b><br> </p>
 Il termostato, è configurato per funzionare in 5 modalità:<br>
@@ -102,7 +102,7 @@ Potrete selezionare la modalità in uscita ovvero quando siete in modalità AUTO
 L'ultima ozione serve per scegliere se ricevere o meno un messaggio all'accensione del termostato. <br>
 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/aggiornamento.png" alt="aggiornamenti"></p>
-Quando compare l'icona aggiornamento sulla pagina centrale, cliccandoci sopra si aprirà la pagina degli aggiornamenti. Di volta in volta verrà avvisato se basterà aggiornare solo il package o anche la parte lovelace, ovviamente dalla versione precedente. Da qui basterà cliccare su scarica il package o scarica il package_no_climate, in base al tipo di instalazione e vi ritroverete la nuova release. Ricordatevi di cambiare le entità nella parte setup. Per la parte lovelace, dovrà essere aggiornata manualmente, se dovesse essercene bisogno.<br>
+Quando compare l'icona aggiornamento sulla pagina principale, cliccandoci sopra si aprirà la pagina degli aggiornamenti. Di volta in volta verrà avvisato se basterà aggiornare solo il package o anche la parte lovelace, ovviamente rispetto alla versione precedente. Da qui basterà cliccare su scarica il package o scarica il package_no_climate, in base al tipo di instalazione che avete e vi ritroverete la nuova release. Ricordatevi di cambiare le entità nella parte setup. Al termine del download vi darà l'esito proponendo di riavviare cliccando sul pulsante "Riavvia Home Assistant"  in caso di esito positivo oppure di scaricare il package in manuale in caso di esito negativo. Per la parte lovelace, dovrà essere aggiornata manualmente, se dovesse essercene bisogno.<br>
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
