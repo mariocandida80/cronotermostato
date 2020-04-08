@@ -103,7 +103,7 @@ L'ultima ozione serve per scegliere se ricevere o meno un messaggio all'accensio
 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/aggiornamento.png" alt="aggiornamenti"></p>
 Quando compare l'icona aggiornamento sulla pagina principale, cliccandoci sopra si aprirà la pagina degli aggiornamenti. Di volta in volta verrà avvisato se basterà aggiornare solo il package o anche la parte lovelace, ovviamente rispetto alla versione precedente. Da qui basterà cliccare su scarica il package o scarica il package_no_climate, in base al tipo di instalazione che avete e vi ritroverete la nuova release. Ricordatevi di cambiare le entità nella parte setup. Al termine del download vi darà l'esito proponendo di riavviare cliccando sul pulsante "Riavvia Home Assistant"  in caso di esito positivo oppure di scaricare il package in manuale in caso di esito negativo. Per la parte lovelace, dovrà essere aggiornata manualmente, se dovesse essercene bisogno.<br>
-<p align="left"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess_ok.png" alt="aggiornamenti"></p>
+<p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20ok.png" alt="messaggio ok"><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20not%20ok.png" alt="messaggio not ok"></p>
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
 <a name="Changelog"><p align="center"/> <b>Change log V2.3</b> <br> </p>
