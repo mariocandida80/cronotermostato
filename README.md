@@ -128,7 +128,7 @@ Attenzione che per la nuova interfaccia bisogna aggiungere anche il file imposta
 <p align="center"/> <b>Change log V1.3.3</b> <br> 
 Quando si accende o spegne il termostato da app esterna, viene sincronizzato anche su home Assistant impostando Manuale oppure off a seconda del caso.</p>
 <p align="center"/> <b>Change log V1.3.2</b> <br> 
-< align="left"/>Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
+Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
 Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app, si sincronizza anche con lovelace.<br>
 Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
 Per chi ha già installato una versione precedente, sostituite il file fiamma.gif con quello nuovo che ha lo sfondo trasparente.
