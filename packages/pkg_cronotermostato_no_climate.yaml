@@ -1216,7 +1216,7 @@ automation:
 
            Temperatura casa {{ states.sensor.temperatura_attuale.state }} °C
 
-           Temperatura impostata {{ state_attr('*termostato', 'temperature') }} °C
+           Temperatura impostata {{ states.sensor.temperatura_impostata.state  }} °C
 
 #sincro sensore temperatura all'avvio
   - alias: sincronizzazione temperatura term
