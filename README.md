@@ -27,10 +27,10 @@ Per installare questo package avrete bisogno di:<br>
 <a name="Installazione1"><p align="center"/><p align="center"/> <b>Installazione con entità climate non pre installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
-Pkg_cronotermostato_v2_0.yaml nella cartella packages <br>
+Pkg_cronotermostato.yaml nella cartella packages <br>
 blu.jpg, impostazioni.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
-Aprire il file Pkg_cronotermostato_v2_0.yaml ed effettuare le seguenti modifiche:<br>
+Aprire il file Pkg_cronotermostato.yaml ed effettuare le seguenti modifiche:<br>
 1. sostituire switch.sonoff_10004b541f con lo switch che accende il termostato (riga 33)<br>
 2. sostituire sensor.sonoff_10004b541f_temperature con il sensore della temperatura (riga 34)<br>
 3. sostituire device_tracker.iphone7 con il proprio device_tracker (riga 35)<br>
@@ -46,10 +46,10 @@ Riavviare home assistant<br><br>
 <a name="Installazione2"><p align="center"/> <b>Installazione con entità climate già installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
 Copiare i file in questo modo:<br>
-Pkg_cronotermostato_v2_0_no_climate.yaml nella cartella packages <br>
+Pkg_cronotermostato_no_climate.yaml nella cartella packages <br>
 blu.jpg, impostazioni.jpg e fiamma.gif nella cartella www/immagini/lovelace/<br>
 
-Aprire il file Pkg_cronotermostato_v2_0_no_climate.yaml ed effettuare le seguenti modifiche:<br>
+Aprire il file Pkg_cronotermostato_no_climate.yaml ed effettuare le seguenti modifiche:<br>
 1. sostituire device_tracker.dispositivo con il proprio device_tracker (riga 32)<br>
 2. sostituire la zona home con la propria zona se è diversa (riga 33)<br>
 3. sostituire il servizio di notifica con il proprio (riga 34)<br>
