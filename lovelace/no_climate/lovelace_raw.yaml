@@ -31,7 +31,7 @@ states:
           color: white
           font-family: Trebuchet MS
           font-size: 120%
-          left: 10%
+          left: 15%
           pointer-events: auto
           text-align: left
           top: 30%
@@ -115,140 +115,6 @@ states:
           transform: 'translate(0%,-50%)'
         tap_action:
           action: none
-        type: state-label
-      - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
-        style:
-          color: green
-          left: 95%
-          top: 10%
-        tap_action:
-          action: call-service
-          service: input_select.select_option
-          service_data:
-            entity_id: input_select.visualizzazione
-            option: TERMOSTATO
-        type: icon
-    image: /local/immagini/lovelace/blu.jpg
-    type: picture-elements
-  MESS_OK:
-    elements:
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Aggiornamento riuscito
-        style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
-          border-radius: 6px
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          font-weight: bold
-          left: 10%
-          opacity: 0.8
-          pointer-events: auto
-          right: 10%
-          text-align: center
-          top: 10%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: none
-        type: state-label
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Riavvia Home Assistant
-        style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
-          border-radius: 6px
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          font-weight: bold
-          left: 30%
-          opacity: 0.8
-          pointer-events: auto
-          text-align: center
-          top: 50%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: call-service
-          service: homeassistant.restart
-        type: state-label
-      - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
-        style:
-          color: green
-          left: 95%
-          top: 10%
-        tap_action:
-          action: call-service
-          service: input_select.select_option
-          service_data:
-            entity_id: input_select.visualizzazione
-            option: TERMOSTATO
-        type: icon
-    image: /local/immagini/lovelace/blu.jpg
-    type: picture-elements
-  MESS_NOT_OK:
-    elements:
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Aggiornamento non riuscito
-        style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
-          border-radius: 6px
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          font-weight: bold
-          left: 10%
-          opacity: 0.8
-          pointer-events: auto
-          right: 10%
-          text-align: center
-          top: 10%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: none
-        type: state-label
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Prova a scaricare il package manualmente
-        style:
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          left: 15%
-          pointer-events: auto
-          text-align: left
-          top: 50%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: none
-        type: state-label
-      - entity: input_text.casella_vuota
-        hold_action:
-          action: none
-        prefix: Vai alla repo
-        style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
-          border-radius: 6px
-          color: white
-          font-family: Trebuchet MS
-          font-size: 120%
-          font-weight: bold
-          left: 35%
-          opacity: 0.8
-          pointer-events: auto
-          text-align: center
-          top: 68%
-          transform: 'translate(0%,-50%)'
-        tap_action:
-          action: url
-          url_path: 'https://github.com/mariocandida80/cronotermostato'
         type: state-label
       - entity: input_select.visualizzazione
         icon: 'mdi:arrow-left-circle'
@@ -525,6 +391,156 @@ states:
           action: none
         type: state-label
     image: /local/immagini/lovelace/impostazioni.jpg
+    type: picture-elements
+  MESS_NOT_OK:
+    elements:
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Aggiornamento non riuscito
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 10%
+          opacity: 0.8
+          pointer-events: auto
+          right: 10%
+          text-align: center
+          top: 10%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Prova a scaricare il package manualmente
+        style:
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          left: 15%
+          pointer-events: auto
+          text-align: left
+          top: 30%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Vai alla repo
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 35%
+          opacity: 0.8
+          pointer-events: auto
+          text-align: center
+          top: 50%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: url
+          url_path: 'https://github.com/mariocandida80/cronotermostato'
+        type: state-label
+      - entity: input_select.visualizzazione
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: green
+          left: 95%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione
+            option: TERMOSTATO
+        type: icon
+    image: /local/immagini/lovelace/blu.jpg
+    type: picture-elements
+  MESS_OK:
+    elements:
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Aggiornamento riuscito
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 10%
+          opacity: 0.8
+          pointer-events: auto
+          right: 10%
+          text-align: center
+          top: 10%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Ricorda di inserire le tue entità prima di riavviare.
+        style:
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          left: 10%
+          pointer-events: auto
+          text-align: left
+          top: 30%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Riavvia Home Assistant
+        style:
+          background-color: 'rgba(34, 154, 210, 0.5)'
+          border-radius: 6px
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 30%
+          opacity: 0.8
+          pointer-events: auto
+          text-align: center
+          top: 50%
+          transform: 'translate(0%,-50%)'
+        tap_action:
+          action: call-service
+          service: homeassistant.restart
+        type: state-label
+      - entity: input_select.visualizzazione
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: green
+          left: 95%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione
+            option: TERMOSTATO
+        type: icon
+    image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
   ORARIO:
     elements:
@@ -945,3 +961,4 @@ states:
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
 type: 'custom:state-switch'
+
