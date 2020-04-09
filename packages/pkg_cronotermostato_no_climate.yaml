@@ -208,13 +208,6 @@ script:
     sequence:
       - service: downloader.download_file
         data:
-          url: 'https://raw.githubusercontent.com/mariocandida80/cronotermostato/master/packages/pkg_cronotermostato.yaml'
-          overwrite: true
-
-  download_pkg_no:
-    sequence:
-      - service: downloader.download_file
-        data:
           url: 'https://raw.githubusercontent.com/mariocandida80/cronotermostato/master/packages/pkg_cronotermostato_no_climate.yaml'
           overwrite: true
 
