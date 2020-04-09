@@ -55,6 +55,7 @@ Aprire il file Pkg_cronotermostato_no_climate.yaml ed effettuare le seguenti mod
 3. sostituire il servizio di notifica con il proprio (riga 34)<br>
 4. sostituire climate.termostato con il proprio (riga 35)<br>
 5. se si ha già il sensor.time, commentarlo (righe da 138 a 140)<br>
+6. sostituire *termostato con la proprio entità climate (per esempio climate.riscaldameto) alle righe 160 e 167.<br>
 Riavviare home assistant<br><br>
 <a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
 Per chi usa la modalità raw, creare una nuova card e copiare il contenuto di lovelace_raw.yaml.<br>
