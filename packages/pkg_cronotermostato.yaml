@@ -231,7 +231,7 @@ script:
     sequence:
       - service: downloader.download_file
         data:
-          url: 'https://github.com/mariocandida80/cronotermostato/blob/master/packages/pkg_cronotermostato_no_climate.yaml'
+          url: 'https://raw.githubusercontent.com/mariocandida80/cronotermostato/master/packages/pkg_cronotermostato_no_climate.yaml'
           overwrite: true
 
 automation:
