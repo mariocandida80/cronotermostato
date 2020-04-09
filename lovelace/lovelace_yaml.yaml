@@ -962,4 +962,3 @@
             image: /local/immagini/lovelace/blu.jpg
             type: picture-elements
         type: 'custom:state-switch'
-

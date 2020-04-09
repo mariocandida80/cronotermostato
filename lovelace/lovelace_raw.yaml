@@ -61,7 +61,7 @@ states:
           action: call-service
           service: script.turn_on
           service_data:
-            entity_id: script.download_pkg_no
+            entity_id: script.download_pkg
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
@@ -961,4 +961,3 @@ states:
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
 type: 'custom:state-switch'
-
