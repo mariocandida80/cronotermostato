@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-2.4-green"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"> <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a>  <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a> 
+<img src="https://img.shields.io/badge/Versione-2.4-green"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"> <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a>  <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a>
 <br>
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.
 
@@ -55,7 +55,7 @@ Aprire il file Pkg_cronotermostato_no_climate.yaml ed effettuare le seguenti mod
 3. sostituire il servizio di notifica con il proprio (riga 34)<br>
 4. sostituire climate.termostato con il proprio (riga 35)<br>
 5. se si ha già il sensor.time, commentarlo (righe da 138 a 140)<br>
-6. sostituire *termostato con la proprio entità climate (per esempio climate.riscaldameto) alle righe 160 e 167.<br>
+6. sostituire *termostato con la proprio entità climate (per esempio climate.riscaldameto) alle righe 161 e 168.<br>
 Riavviare home assistant<br><br>
 <a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
 Per chi usa la modalità raw, creare una nuova card e copiare il contenuto di lovelace_raw.yaml.<br>
@@ -107,28 +107,30 @@ Quando compare l'icona aggiornamento sulla pagina principale, cliccandoci sopra 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20ok.png" alt="messaggio ok"><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20not%20ok.png" alt="messaggio not ok"></p>
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
-<a name="Changelog"><p align="center"/> <b>Change log V2.4</b> <br> 
+<a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
+Risolto bug per controllo aggiornamenti. Inserita nuova scheda "info" dove è possibile vedere la versione installata e quella più recente.
+<a name="Changelog"><p align="center"/> <b>Change log V2.4</b> <br>
 Ora è possibile scaricare il package direttamente da lovelace sia per la versione standard e sia per la versione no_climate.
 Esito ok o not ok al termine del download con possibilità di riavviare da lovelace dopo il download.</p>
-<a name="Changelog"><p align="center"/> <b>Change log V2.3</b> <br> 
+<a name="Changelog"><p align="center"/> <b>Change log V2.3</b> <br>
 Aggiunta la possibilità di scaricare il package direttamente da lovelace.</p>
-<a name="Changelog"><p align="center"/> <b>Change log V2.2</b> <br> 
+<a name="Changelog"><p align="center"/> <b>Change log V2.2</b> <br>
 Risolto problema in cui alcune volte il termostato in modalità auto partiva anche se la fascia oraria era disattivata.</p>
-<a name="Changelog"><p align="center"/> <b>Change log V2.0</b> <br> 
+<a name="Changelog"><p align="center"/> <b>Change log V2.0</b> <br>
 Aggiunta una notifica quando ci sono nuovi aggiornamenti.
 Bug fix.</p>
 <a name="Changelog"><p align="center"/> <b>Change log V1.3.6</b> <br>
 Risolto bug che quando si cambia una fascia oraria con modalità AUTO già inserita, verifica che sia nella fascia di accensione o spegnimento. </p>
-<a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br> 
+<a name="Changelog"><p align="center"/> <b>Change log V1.3.5</b> <br>
 Risolto bug che non faceva accendere il termostato in modalità AUTO con le terza fascia.
 Risolto bug che non faceva ritornare nella modalità precedente dalla modalità ECO.</p>
 <p align="center"/> <b>Change log V1.3.4</b> <br>
 Risolto un bug che faceva passare in modalità OFF quando il termostato è in modalità AUTO alla fine della facia oraria.
 Nuova interfaccia grafica. La parte relativa alle impostazioni delle fasce orarie è invariata.
 Attenzione che per la nuova interfaccia bisogna aggiungere anche il file impostazioni.jpg nella stessa cartella degli altri 2 file. </p>
-<p align="center"/> <b>Change log V1.3.3</b> <br> 
+<p align="center"/> <b>Change log V1.3.3</b> <br>
 Quando si accende o spegne il termostato da app esterna, viene sincronizzato anche su home Assistant impostando Manuale oppure off a seconda del caso.</p>
-<p align="center"/> <b>Change log V1.3.2</b> <br> 
+<p align="center"/> <b>Change log V1.3.2</b> <br>
 Aggiunta la possibilità di disattivare l'attivazione della modalità ECO ad orari.<br>
 Ora se si cambia la temperatura impostata dal termostato fiscico o da altre app, si sincronizza anche con lovelace.<br>
 Risoloto bug in cui al ritorno dalla modalità ECO con orario impostato la temperatura non cambiava.<br>
