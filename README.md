@@ -55,7 +55,7 @@ Aprire il file Pkg_cronotermostato_no_climate.yaml ed effettuare le seguenti mod
 2. sostituire la zona home con la propria zona se è diversa (riga 33)<br>
 3. sostituire il servizio di notifica con il proprio (riga 34)<br>
 4. sostituire climate.termostato con il proprio (riga 35)<br>
-5. se si ha già il sensor.time, commentarlo (righe da 138 a 140)<br>
+5. se si ha già il sensor.time, commentarlo (righe da 142 a 145)<br>
 6. sostituire *termostato con la proprio entità climate (per esempio climate.riscaldameto) alle righe 161 e 168.<br>
 Riavviare home assistant<br><br>
 <a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
