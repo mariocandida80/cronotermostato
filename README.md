@@ -1,7 +1,7 @@
 <img src="https://img.shields.io/badge/Versione-2.5-green"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"> <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a>  <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a>
 <br>
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.<br>
-Vorrei ringraziare tutto il gruppo <a href="https://www.facebook.com/groups/2062381507393179/">facebook</a> e <a href="https://t.me/HassioHelp">telegram</a> di HassioHelp per il supporto ricevuto. Qui ci sono anche il <a href="https://forum.hassiohelp.eu/">forum</a> e le <a href="https://hassiohelp.eu/">guide</a> molto utili!<br>
+Vorrei ringraziare tutto il gruppo <a href="https://www.facebook.com/groups/2062381507393179/">facebook</a> e <a href="https://t.me/HassioHelp">telegram</a> di HassioHelp per il supporto ricevuto. Qui ci sono anche il <a href="https://forum.hassiohelp.eu/">forum</a> e le <a href="https://hassiohelp.eu/">guide</a> molto utili!<br><br>
 Se vi piace il mio lavoro, potete supportarmi su <a href="https://www.paypal.com/paypalme/mariocandida">Paypal</a> oppure <a href="https://www.buymeacoffee.com/mariocandida80">offrimi un caffè</a>.<br>   
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
 
