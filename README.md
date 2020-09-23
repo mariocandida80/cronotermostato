@@ -2,7 +2,7 @@
 <br>
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.<br>
 Vorrei ringraziare tutto il gruppo <a href="https://www.facebook.com/groups/2062381507393179/">facebook</a> e <a href="https://t.me/HassioHelp">telegram</a> di HassioHelp per il supporto ricevuto. Qui ci sono anche il <a href="https://forum.hassiohelp.eu/">forum</a> e le <a href="https://hassiohelp.eu/">guide</a> molto utili!<br>
-Se vi piace il mio lavoro, potete supportarmi su <a href="paypal.me/mariocandida">Paypal</a> oppure <a href="www.buymeacoffee.com/mariocandida80 ">offrimi un caffè</a>.<br>   
+Se vi piace il mio lavoro, potete supportarmi su <a href="https://www.paypal.com/paypalme/mariocandida">Paypal</a> oppure <a href="www.buymeacoffee.com/mariocandida80 ">offrimi un caffè</a>.<br>   
 <p align="center"/> <b>Package Cronotermostato per Home Assistant.</b> <br> </p>
 
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png"></p>
