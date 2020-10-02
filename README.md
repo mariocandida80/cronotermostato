@@ -24,6 +24,7 @@ Per funzionare ha bisogno o di un'entità climate già installata oppure di 2 en
 Per installare questo package avrete bisogno di:<br>
 1. aver configurato <a href="https://github.com/mariocandida80/cronotermostato/wiki/Packages-Home-Assistant">i packages</a><br>
 2. installare <a href="https://github.com/custom-cards/button-card">button-card</a>, <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod</a>,  <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a> e <a href="https://github.com/pilotak/homeassistant-attributes"> attributes </a> <a href="https://github.com/mariocandida80/cronotermostato/wiki/Installazione-HACS"> (da HACS).</a><br><br>
+
 Se avete più sensori temperatura, <a href="https://github.com/mariocandida80/cronotermostato/wiki/Come-fare-la-media-di-più-sensori">qui</a> spiego come fare una media. <br>
 <a name="Installazione1"><p align="center"/><p align="center"/> <b>Installazione con entità climate non pre installata</b> <br> </p>
 Scaricare il file cronotermostato-master.zip (clone or download in alto a destra e poi download zip) e decomprimere i file. <br>
