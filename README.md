@@ -108,9 +108,11 @@ L'ultima ozione serve per scegliere se ricevere o meno un messaggio all'accensio
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/aggiornamento.png" alt="aggiornamenti"></p>
 Quando compare l'icona aggiornamento sulla pagina principale, cliccandoci sopra si aprirà la pagina degli aggiornamenti. Di volta in volta verrà avvisato se basterà aggiornare solo il package o anche la parte lovelace, ovviamente rispetto alla versione precedente. Da qui basterà cliccare su scarica il package e vi ritroverete la nuova release. Ricordatevi di cambiare le entità nella parte setup. Al termine del download vi darà l'esito proponendo di riavviare cliccando sul pulsante "Riavvia Home Assistant"  in caso di esito positivo oppure di scaricare il package in manuale in caso di esito negativo. Per la parte lovelace, dovrà essere aggiornata manualmente, se dovesse esserci bisogno di aggiornare.<br>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20ok.png" alt="messaggio ok"><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/mess%20not%20ok.png" alt="messaggio not ok"></p>
-Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
+
+Per qualsiasi problema scrivete nelle issue qui su github o sul <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato">forum.</a><br>
 
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.<br>
+
 Vorrei ringraziare tutto il gruppo <a href="https://www.facebook.com/groups/2062381507393179/">facebook</a> e <a href="https://t.me/HassioHelp">telegram</a> di HassioHelp per il supporto ricevuto. Qui ci sono anche il <a href="https://forum.hassiohelp.eu/">forum</a> e le <a href="https://hassiohelp.eu/">guide</a> molto utili!<br><br>
 
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
