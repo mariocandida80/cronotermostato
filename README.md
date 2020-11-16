@@ -63,7 +63,7 @@ Riavviare home assistant<br><br>
 <a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
 Per chi usa la modalità raw, creare una nuova card e copiare il contenuto di lovelace_raw.yaml.<br>
 Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il contenuto nel proprio file lovelace.<br>
-Se avete installato il package no climate cercate nella scheda lovelace "sensor.riscaldamento_hvac_action" e cambiate riscaldamento con il nome del vostro climate, ad esempio se il vostro si chiama climate.termostato dovrete cambiare in sensor.termostato_hvac_action.<br> 
+Se avete installato il package no climate cercate nella scheda lovelace "sensor.riscaldamento_hvac_action" e cambiate riscaldamento con il nome del vostro climate, ad esempio se il vostro si chiama climate.termostato dovrete cambiare in sensor.termostato_hvac_action; se non lo fate, la fiamma resterà sempre grigia.<br> 
 
 <a name="Funzionamento"><p align="center"/> <b>Funzionamento</b><br> </p>
 <p align="center"/><img src="https://github.com/mariocandida80/cronotermostato/blob/master/esempi/nuova_principale.png" alt="Immagine cronotermostato"></p>
