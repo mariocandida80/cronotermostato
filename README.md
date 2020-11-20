@@ -122,7 +122,7 @@ Vorrei ringraziare tutto il gruppo <a href="https://www.facebook.com/groups/2062
 
 Ho creato una serie di servizi aggiuntivi da installare a parte:
 <ul>
-  <li> <a href="https://github.com/mariocandida80/addon_telegram/blob/master/README.md">Addon per comandare totalmente il cronotermostato da Telegram.</a><br></li>
+  <li><a href="https://github.com/mariocandida80/addon_telegram/blob/master/README.md">Addon per comandare totalmente il cronotermostato da Telegram.</a><br></li>
   <li><a href="https://github.com/mariocandida80/addon_settimanale">Addon per programmazione settimanale.</a><br></li>
   <li><a href="https://github.com/mariocandida80/secondo_cronotermostato">Secondo cronotermostato aggiuntivo.</a><br></li>
   </ul><br>
