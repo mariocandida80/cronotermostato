@@ -15,6 +15,7 @@ Vediamo come installarlo. <br>
   <li><a href="#Installazione2">Installazione con entità climate già installata</a><br></li>
   <li><a href="#Confcard">Configurazione card</a><br></li>
   <li><a href="#Funzionamento">Funzionamento</a><br></li>
+  <li><a href="#Addon">Addon</a><br></li> 
   <li><a href="#Changelog">Change log</a><br></li>
   </ul>
 
@@ -116,6 +117,10 @@ Per qualsiasi problema scrivete nelle <a href="https://github.com/mariocandida80
 Per chi vuole la versione settimanale, può integrarla <a href="https://github.com/mariocandida80/addon_settimanale">qui</a>.<br>
 
 Vorrei ringraziare tutto il gruppo <a href="https://www.facebook.com/groups/2062381507393179/">facebook</a> e <a href="https://t.me/HassioHelp">telegram</a> di HassioHelp per il supporto ricevuto. Qui ci sono anche il <a href="https://forum.hassiohelp.eu/">forum</a> e le <a href="https://hassiohelp.eu/">guide</a> molto utili!<br><br>
+
+<a name="Addon"><p align="center"/> <b>Addon</b><br> </p>
+
+https://github.com/mariocandida80/addon_telegram/blob/master/README.md
 
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
 Risolto bug per controllo aggiornamenti. Inserita nuova scheda "info" dove è possibile vedere la versione installata e quella più recente.
