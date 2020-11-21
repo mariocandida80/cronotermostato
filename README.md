@@ -135,7 +135,7 @@ Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzio
   Soluzione:<br>
   Controllare il nome della custom card che da errore (in lovelace vi uscirà qualcosa tipo: "Custom element doesn't exist: state-switch", qui il problema è state-switch), andate in HACS e controllate se ci sono aggiornamenti.<br>
   Cancellate la cache e riavviate il browser.<br>
-  Le custom card (state-switch, button-card e card-mod) non sono sviluppate da me quindi fare riferimento alle rispettive repo.<br>
+  Le custom card (<a href="https://github.com/custom-cards/button-card">button-card</a>, <a href="https://github.com/thomasloven/lovelace-card-mod"> card-mod</a>,  <a href="https://github.com/thomasloven/lovelace-state-switch">state-switch</a>) non sono sviluppate da me quindi fare riferimento alle rispettive repo.<br>
   <b>La fiamma non si accende anche se il termostato è acceso.</b><br>
   Il problema sorge con il pacchetto no_climate.<br>
   Soluzione:<br>
