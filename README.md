@@ -60,7 +60,7 @@ Aprire il file Pkg_cronotermostato_no_climate.yaml ed effettuare le seguenti mod
 3. sostituire il servizio di notifica con il proprio (riga 34)<br>
 4. sostituire climate.termostato con il proprio (riga 35)<br>
 5. se si ha già il sensor.time, commentarlo (righe da 142 a 145)<br>
-6. sostituire *termostato con la proprio entità climate (per esempio climate.riscaldameto) alle righe 161, 168, 173 e 1218.<br>
+6. sostituire *termostato con la proprio entità climate (per esempio climate.riscaldameto) alle righe 161, 168, 173 e 1226.<br>
 Riavviare home assistant<br><br>
 
 <a name="Confcard"><p align="center"/> <b>Per la configurazione della card:</b><br> </p>
@@ -139,7 +139,7 @@ Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzio
   <b>La fiamma non si accende anche se il termostato è acceso.</b><br>
   Il problema sorge con il pacchetto no_climate.<br>
   Soluzione:<br>
-  Bisogna modificare le righe 161, 168, 173 e 1218 del suddetto package cambiando *termostato con il proprio climate. Esempio: se il vostro climate si chiama climate.riscaldamento, sostituite value_template: "{{ state_attr('*termostato', 'current_temperature') }}" con: value_template: "{{ state_attr('climate.riscaldamento', 'current_temperature') }}".<br>
+  Bisogna modificare le righe 161, 168, 173 e 1226 del suddetto package cambiando *termostato con il proprio climate. Esempio: se il vostro climate si chiama climate.riscaldamento, sostituite value_template: "{{ state_attr('*termostato', 'current_temperature') }}" con: value_template: "{{ state_attr('climate.riscaldamento', 'current_temperature') }}".<br>
   
   </ul>
 
