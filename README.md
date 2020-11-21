@@ -142,7 +142,8 @@ Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzio
   Bisogna modificare le righe 161, 168, 173 e 1226 del suddetto package cambiando *termostato con il proprio climate. Esempio: se il vostro climate si chiama climate.riscaldamento, sostituite value_template: "{{ state_attr('*termostato', 'current_temperature') }}" con: value_template: "{{ state_attr('climate.riscaldamento', 'current_temperature') }}".<br>
   
   </ul>
-
+<a name="Changelog"><p align="center"/> <b>Change log V2.6</b> <br>
+Aggiunto sensore che misura il tempo di accensione del termostato nella giornata odierna.<br>
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
 Risolto bug per controllo aggiornamenti. Inserita nuova scheda "info" dove è possibile vedere la versione installata e quella più recente.
 <a name="Changelog"><p align="center"/> <b>Change log V2.4</b> <br>
