@@ -10,12 +10,13 @@ modalità selezionabili dall’utente e che sia possibile accenderlo in determin
 Vediamo come installarlo. <br>
 <br>
 <ul>
-  <li> <a href="#Prerequisiti">Prerequisiti</a><br></li>
+  <li><a href="#Prerequisiti">Prerequisiti</a><br></li>
   <li><a href="#Installazione1">Installazione con entità climate non pre installata</a><br></li>
   <li><a href="#Installazione2">Installazione con entità climate già installata</a><br></li>
   <li><a href="#Confcard">Configurazione card</a><br></li>
   <li><a href="#Funzionamento">Funzionamento</a><br></li>
   <li><a href="#Addon">Addon</a><br></li> 
+  <li><a href="#Problemi">Problemi noti</a><br></li> 
   <li><a href="#Changelog">Change log</a><br></li>
   </ul>
 
@@ -126,6 +127,16 @@ Ho creato una serie di servizi aggiuntivi da installare a parte:
   <li><a href="https://github.com/mariocandida80/addon_settimanale">Addon per programmazione settimanale.</a><br></li>
   <li><a href="https://github.com/mariocandida80/secondo_cronotermostato">Secondo cronotermostato aggiuntivo.</a><br></li>
   </ul><br>
+
+<a name="Problemi"><p align="center"/> <b>Problemi noti</b><br> </p>
+Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzioni.<br>
+<ul>
+  La card in Lovelace non si carica e da errore.<br>
+  Soluzione:<br>
+  Controllare il nome della custom card che da errore (in lovelace vi uscirà qualcosa tipo: "Custom element doesn't exist: state-switch", qui il problema è state-switch), andate in HACS e controllate se ci sono aggiornamenti.<br>
+  Cancellate la cache e riavviate il browser.<br>
+  Le custom card (state-switch, button-card e card-mod) non sono sviluppate da me quindi fare riferimento alle rispettive repo.<br>
+    </ul>
 
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
 Risolto bug per controllo aggiornamenti. Inserita nuova scheda "info" dove è possibile vedere la versione installata e quella più recente.
