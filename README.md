@@ -131,12 +131,17 @@ Ho creato una serie di servizi aggiuntivi da installare a parte:
 <a name="Problemi"><p align="center"/> <b>Problemi noti</b><br> </p>
 Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzioni.<br>
 <ul>
-  La card in Lovelace non si carica e da errore.<br>
+  <b>La card in Lovelace non si carica e da errore.</b><br>
   Soluzione:<br>
   Controllare il nome della custom card che da errore (in lovelace vi uscirà qualcosa tipo: "Custom element doesn't exist: state-switch", qui il problema è state-switch), andate in HACS e controllate se ci sono aggiornamenti.<br>
   Cancellate la cache e riavviate il browser.<br>
   Le custom card (state-switch, button-card e card-mod) non sono sviluppate da me quindi fare riferimento alle rispettive repo.<br>
-    </ul>
+  <b>La fiamma non si accende anche se il termostato è acceso.</b><br>
+  Soluzione:<br>
+  Il problema sorge con il pacchetto no_climate.<br>
+  Bisogna modificare le righe 161, 168, 173 e 1218 del suddetto package cambiando *termostato con il proprio climate. Esempio: se il vostro climate si chiama climate.riscaldamento, sostituite value_template: "{{ state_attr('*termostato', 'current_temperature') }}" con: value_template: "{{ state_attr('climate.riscaldamento', 'current_temperature') }}".<br>
+  
+  </ul>
 
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
 Risolto bug per controllo aggiornamenti. Inserita nuova scheda "info" dove è possibile vedere la versione installata e quella più recente.
