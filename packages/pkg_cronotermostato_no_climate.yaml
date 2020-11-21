@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '2_5'
+        Version: '2.6'
         Author: 'MARIO @tlod80'
 
       expose: &expose
@@ -176,6 +176,14 @@ sensor:
       versione_attuale_term:
         friendly_name: "Versione attuale termostato"
         value_template: "{{ state_attr('sensor.temperatura_attuale', 'Version') }}"
+
+  - platform: history_stats
+    name: tempo accensione termostato
+    entity_id: switch.sonoff_10004b541f
+    state: 'on'
+    type: time
+    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+    end: '{{ now() }}'
 
 downloader:
   download_dir: packages
