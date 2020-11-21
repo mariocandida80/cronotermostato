@@ -143,7 +143,7 @@ Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzio
   
   </ul>
 <a name="Changelog"><p align="center"/> <b>Change log V2.6</b> <br>
-Aggiunto sensore che misura il tempo di accensione del termostato nella giornata odierna.<br>
+Aggiunto sensore che misura il tempo di accensione del termostato nella giornata odierna. Per ora non è stato integrato in Lovelace e nemmeno nei messaggi. Per visualizzarlo basta richiamare il sensor.tempo_accensione_termostato.<br>
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
 Risolto bug per controllo aggiornamenti. Inserita nuova scheda "info" dove è possibile vedere la versione installata e quella più recente.
 <a name="Changelog"><p align="center"/> <b>Change log V2.4</b> <br>
