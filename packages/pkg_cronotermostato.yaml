@@ -195,7 +195,7 @@ sensor:
 
   - platform: history_stats
     name: tempo accensione termostato
-    entity_id: switch.sonoff_10004b541f
+    entity_id: *caldaia
     state: 'on'
     type: time
     start: '{{ now().replace(hour=0, minute=0, second=0) }}'
