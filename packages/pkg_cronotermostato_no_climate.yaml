@@ -177,13 +177,13 @@ sensor:
         friendly_name: "Versione attuale termostato"
         value_template: "{{ state_attr('sensor.temperatura_attuale', 'Version') }}"
 
-  - platform: history_stats
-    name: tempo accensione termostato
-    entity_id: *caldaia
-    state: 'on'
-    type: time
-    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
-    end: '{{ now() }}'
+#  - platform: history_stats
+#    name: tempo accensione termostato
+#    entity_id: *caldaia
+#    state: 'on'
+#    type: time
+#    start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+#    end: '{{ now() }}'
 
 downloader:
   download_dir: packages
