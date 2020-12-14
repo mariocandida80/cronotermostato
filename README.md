@@ -126,6 +126,7 @@ Ho creato una serie di servizi aggiuntivi da installare a parte:
   <li><a href="https://github.com/mariocandida80/addon_telegram/blob/master/README.md">Addon per comandare totalmente il cronotermostato da Telegram.</a><br></li>
   <li><a href="https://github.com/mariocandida80/addon_settimanale">Addon per programmazione settimanale.</a><br></li>
   <li><a href="https://github.com/mariocandida80/secondo_cronotermostato">Secondo cronotermostato aggiuntivo.</a><br></li>
+  <li><a href="  https://github.com/mariocandida80/addon_programmi_preimpostati">Programmi preimpostati.</a><br></li>
   </ul><br>
 
 <a name="Problemi"><p align="center"/> <b>Problemi noti</b><br> </p>
