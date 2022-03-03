@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package: 'Cronotermostato'
-        Version: '2.6'
+        Version: '2.7'
         Author: 'MARIO @tlod80'
 
       expose: &expose
