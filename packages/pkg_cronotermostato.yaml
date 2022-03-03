@@ -1544,3 +1544,20 @@ automation:
     - data:
         entity_id: climate.riscaldamento
       service: climate.turn_off
+    
+  - alias: notte off term
+    trigger:
+    - platform: time
+      at: input_datetime.orario_spegnimento_notte_term
+    condition:
+      - condition: state
+        entity_id: input_boolean.notte
+        state: 'on'
+    action:
+    - data:
+        entity_id: climate.riscaldamento
+      service: climate.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.modalita_old
+        option: 'OFF'
