@@ -143,6 +143,8 @@ Ci sono alcune problematiche note successe a più utenti. Qui trovate le soluzio
   Bisogna modificare le righe 161, 168, 173 e 1226 del suddetto package cambiando *termostato con il proprio climate. Esempio: se il vostro climate si chiama climate.riscaldamento, sostituite value_template: "{{ state_attr('*termostato', 'current_temperature') }}" con: value_template: "{{ state_attr('climate.riscaldamento', 'current_temperature') }}".<br>
   
   </ul>
+<a name="Changelog"><p align="center"/> <b>Change log V2.7</b> <br>
+Aggiunta la possibilità di poter spegnere in automatico ad un'ora prefissata se si dimentica di spegnere il riscaldamento. Nel menù impostazioni aggiunta la voce "Spegnimento notte" per la funzione precedentemente descritta con orario impostaile e pulsante per abilitare e disattivare questa funzione.
 <a name="Changelog"><p align="center"/> <b>Change log V2.6</b> <br>
 Aggiunto sensore che misura il tempo di accensione del termostato nella giornata odierna. Per ora non è stato integrato in Lovelace e nemmeno nei messaggi. Per visualizzarlo basta richiamare il sensor.tempo_accensione_termostato.<br>
 <a name="Changelog"><p align="center"/> <b>Change log V2.5</b> <br>
