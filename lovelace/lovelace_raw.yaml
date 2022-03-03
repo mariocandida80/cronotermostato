@@ -8,7 +8,7 @@ states:
           action: none
         prefix: Aggiornamento disponibile
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -20,7 +20,7 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -35,17 +35,17 @@ states:
           pointer-events: auto
           text-align: left
           top: 30%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: url
-          url_path: 'https://github.com/mariocandida80/cronotermostato'
+          url_path: https://github.com/mariocandida80/cronotermostato
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
           action: none
         prefix: Scarica il package
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -56,7 +56,7 @@ states:
           pointer-events: auto
           text-align: center
           top: 50%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: call-service
           service: script.turn_on
@@ -68,7 +68,7 @@ states:
           action: none
         prefix: Vai alla repo
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -79,10 +79,10 @@ states:
           pointer-events: auto
           text-align: center
           top: 68%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: url
-          url_path: 'https://github.com/mariocandida80/cronotermostato'
+          url_path: https://github.com/mariocandida80/cronotermostato
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
@@ -96,14 +96,14 @@ states:
           pointer-events: auto
           text-align: left
           top: 80%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
           action: none
-        prefix: 'Lovelace, se bisogna aggiornarlo, va fatto manualmente.'
+        prefix: Lovelace, se bisogna aggiornarlo, va fatto manualmente.
         style:
           color: white
           font-family: Trebuchet MS
@@ -112,12 +112,12 @@ states:
           pointer-events: auto
           text-align: left
           top: 85%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -129,7 +129,7 @@ states:
             entity_id: input_select.visualizzazione
             option: TERMOSTATO
         type: icon
-    image: /local/immagini/lovelace/blu.jpg
+    image: /local/blu.jpg
     type: picture-elements
   ECO:
     elements:
@@ -138,7 +138,7 @@ states:
           action: none
         prefix: Impostazioni eco
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -148,12 +148,12 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -198,7 +198,7 @@ states:
           left: 10%
           text-align: left
           top: 40%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -215,7 +215,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 55%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -232,7 +232,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 70%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -242,7 +242,7 @@ states:
           service: input_number.increment
           service_data:
             entity_id: input_number.temperatura_eco
-        icon: 'mdi:arrow-up-bold-outline'
+        icon: mdi:arrow-up-bold-outline
         style:
           color: white
           left: 60%
@@ -259,7 +259,7 @@ states:
           service: input_number.decrement
           service_data:
             entity_id: input_number.temperatura_eco
-        icon: 'mdi:arrow-down-bold-outline'
+        icon: mdi:arrow-down-bold-outline
         style:
           color: white
           left: 80%
@@ -270,7 +270,7 @@ states:
           service_data:
             entity_id: input_number.temperatura_eco
         type: icon
-    image: /local/immagini/lovelace/blu.jpg
+    image: /local/blu.jpg
     type: picture-elements
   IMPOSTAZIONI:
     elements:
@@ -279,7 +279,7 @@ states:
           action: none
         prefix: Impostazioni
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -289,12 +289,12 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -311,7 +311,7 @@ states:
           color: white
           font-size: 150%
           left: 70%
-          top: 35%
+          top: 25%
         tap_action:
           action: call-service
           service: input_boolean.toggle
@@ -323,7 +323,7 @@ states:
           color: white
           font-size: 150%
           left: 70%
-          top: 50%
+          top: 40%
         tap_action:
           action: call-service
           service: input_select.select_next
@@ -335,12 +335,24 @@ states:
           color: white
           font-size: 150%
           left: 70%
-          top: 65%
+          top: 55%
         tap_action:
           action: call-service
           service: automation.toggle
           service_data:
             entity_id: automation.mess_term
+        type: state-label
+      - entity: input_boolean.notte
+        style:
+          color: white
+          font-size: 150%
+          left: 80%
+          top: 70%
+        tap_action:
+          action: call-service
+          service: input_boolean.toggle
+          service_data:
+            entity_id: input_boolean.notte
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
@@ -353,10 +365,17 @@ states:
           font-weight: bold
           left: 10%
           text-align: left
-          top: 35%
-          transform: 'translate(0%,-50%)'
+          top: 25%
+          transform: translate(0%,-50%)
         tap_action:
           action: none
+        type: state-label
+      - entity: input_datetime.orario_spegnimento_notte_term
+        style:
+          color: white
+          font-size: 150%
+          left: 60%
+          top: 70%
         type: state-label
       - entity: input_text.casella_vuota
         hold_action:
@@ -369,8 +388,8 @@ states:
           font-weight: bold
           left: 10%
           text-align: left
-          top: 50%
-          transform: 'translate(0%,-50%)'
+          top: 40%
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -385,8 +404,24 @@ states:
           font-weight: bold
           left: 10%
           text-align: left
-          top: 65%
-          transform: 'translate(0%,-50%)'
+          top: 55%
+          transform: translate(0%,-50%)
+        tap_action:
+          action: none
+        type: state-label
+      - entity: input_text.casella_vuota
+        hold_action:
+          action: none
+        prefix: Spegnimento notte
+        style:
+          color: white
+          font-family: Trebuchet MS
+          font-size: 120%
+          font-weight: bold
+          left: 5%
+          text-align: left
+          top: 70%
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -395,7 +430,7 @@ states:
           action: none
         prefix: Info
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -405,8 +440,8 @@ states:
           opacity: 0.8
           pointer-events: auto
           text-align: center
-          top: 80%
-          transform: 'translate(0%,-50%)'
+          top: 90%
+          transform: translate(0%,-50%)
         tap_action:
           action: call-service
           service: input_select.select_option
@@ -414,7 +449,7 @@ states:
             entity_id: input_select.visualizzazione
             option: INFO
         type: state-label
-    image: /local/immagini/lovelace/impostazioni.jpg
+    image: /local/impostazioni.jpg
     type: picture-elements
   INFO:
     elements:
@@ -423,7 +458,7 @@ states:
           action: none
         prefix: Info
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -434,7 +469,7 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -450,7 +485,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 30%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -466,7 +501,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 50%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -482,7 +517,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 60%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -498,7 +533,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 40%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -507,7 +542,7 @@ states:
           action: none
         prefix: Vai alla repo
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -518,13 +553,13 @@ states:
           pointer-events: auto
           text-align: center
           top: 75%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: url
-          url_path: 'https://github.com/mariocandida80/cronotermostato'
+          url_path: https://github.com/mariocandida80/cronotermostato
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -536,7 +571,7 @@ states:
             entity_id: input_select.visualizzazione
             option: TERMOSTATO
         type: icon
-    image: /local/immagini/lovelace/blu.jpg
+    image: /local/blu.jpg
     type: picture-elements
   MESS_NOT_OK:
     elements:
@@ -545,7 +580,7 @@ states:
           action: none
         prefix: Aggiornamento non riuscito
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -557,7 +592,7 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -573,7 +608,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 30%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -582,7 +617,7 @@ states:
           action: none
         prefix: Vai alla repo
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -593,13 +628,13 @@ states:
           pointer-events: auto
           text-align: center
           top: 50%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: url
-          url_path: 'https://github.com/mariocandida80/cronotermostato'
+          url_path: https://github.com/mariocandida80/cronotermostato
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -611,7 +646,7 @@ states:
             entity_id: input_select.visualizzazione
             option: TERMOSTATO
         type: icon
-    image: /local/immagini/lovelace/blu.jpg
+    image: /local/blu.jpg
     type: picture-elements
   MESS_OK:
     elements:
@@ -620,7 +655,7 @@ states:
           action: none
         prefix: Aggiornamento riuscito
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -632,7 +667,7 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -648,7 +683,7 @@ states:
           pointer-events: auto
           text-align: left
           top: 30%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -657,7 +692,7 @@ states:
           action: none
         prefix: Riavvia Home Assistant
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -668,13 +703,13 @@ states:
           pointer-events: auto
           text-align: center
           top: 50%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: call-service
           service: homeassistant.restart
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -686,7 +721,7 @@ states:
             entity_id: input_select.visualizzazione
             option: TERMOSTATO
         type: icon
-    image: /local/immagini/lovelace/blu.jpg
+    image: /lococal/blu.jpg
     type: picture-elements
   ORARIO:
     elements:
@@ -695,7 +730,7 @@ states:
           action: none
         prefix: Orario termostato
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -707,12 +742,12 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:arrow-left-circle'
+        icon: mdi:arrow-left-circle
         style:
           color: green
           left: 95%
@@ -805,7 +840,7 @@ states:
           pointer-events: auto
           text-align: center
           top: 40%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -824,7 +859,7 @@ states:
           pointer-events: auto
           text-align: center
           top: 40%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
@@ -842,11 +877,11 @@ states:
           pointer-events: auto
           text-align: center
           top: 40%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
-    image: /local/immagini/lovelace/blu.jpg
+    image: /local/blu.jpg
     type: picture-elements
   TERMOSTATO:
     elements:
@@ -855,7 +890,7 @@ states:
           action: none
         prefix: Termostato
         style:
-          background-color: 'rgba(34, 154, 210, 0.5)'
+          background-color: rgba(34, 154, 210, 0.5)
           border-radius: 6px
           color: white
           font-family: Trebuchet MS
@@ -867,12 +902,12 @@ states:
           right: 10%
           text-align: center
           top: 10%
-          transform: 'translate(0%,-50%)'
+          transform: translate(0%,-50%)
         tap_action:
           action: none
         type: state-label
       - entity: input_select.visualizzazione
-        icon: 'mdi:calendar-today'
+        icon: mdi:calendar-today
         style:
           color: green
           left: 95%
@@ -885,7 +920,7 @@ states:
             option: ORARIO
         type: icon
       - entity: input_select.visualizzazione
-        icon: 'mdi:cogs'
+        icon: mdi:cogs
         style:
           color: grey
           left: 5%
@@ -898,7 +933,7 @@ states:
             option: IMPOSTAZIONI
         type: icon
       - entity: input_select.visualizzazione
-        icon: 'mdi:leaf'
+        icon: mdi:leaf
         style:
           color: green
           left: 95%
@@ -926,7 +961,7 @@ states:
         type: state-label
       - color: grey
         entity: input_select.modalita_termostato
-        icon: 'mdi:flash-off'
+        icon: mdi:flash-off
         name: 'OFF'
         style: |
           ha-card {
@@ -947,10 +982,10 @@ states:
           service_data:
             entity_id: input_select.modalita_termostato
             option: 'OFF'
-        type: 'custom:button-card'
+        type: custom:button-card
       - color: red
         entity: input_select.modalita_termostato
-        icon: 'mdi:fire'
+        icon: mdi:fire
         name: MAN
         style: |
           ha-card {
@@ -971,10 +1006,10 @@ states:
           service_data:
             entity_id: input_select.modalita_termostato
             option: MANUALE
-        type: 'custom:button-card'
+        type: custom:button-card
       - color: blue
         entity: input_select.modalita_termostato
-        icon: 'mdi:home-automation'
+        icon: mdi:home-automation
         name: AUTO
         style: |
           ha-card {
@@ -994,10 +1029,10 @@ states:
           service: script.turn_on
           service_data:
             entity_id: script.auto
-        type: 'custom:button-card'
+        type: custom:button-card
       - color: green
         entity: input_select.modalita_termostato
-        icon: 'mdi:leaf'
+        icon: mdi:leaf
         name: ECO
         style: |
           ha-card {
@@ -1018,10 +1053,10 @@ states:
           service_data:
             entity_id: input_select.modalita_termostato
             option: ECO
-        type: 'custom:button-card'
+        type: custom:button-card
       - color: orange
         entity: input_select.modalita_termostato
-        icon: 'mdi:fire'
+        icon: mdi:fire
         name: PRE
         style: |
           ha-card {
@@ -1041,14 +1076,14 @@ states:
           service: script.turn_on
           service_data:
             entity_id: script.pre
-        type: 'custom:button-card'
+        type: custom:button-card
       - entity: input_number.temperatura_termostato
         hold_action:
           action: call-service
           service: input_number.increment
           service_data:
             entity_id: input_number.temperatura_termostato
-        icon: 'mdi:arrow-up-bold-outline'
+        icon: mdi:arrow-up-bold-outline
         style:
           color: white
           left: 80%
@@ -1065,7 +1100,7 @@ states:
           service: input_number.decrement
           service_data:
             entity_id: input_number.temperatura_termostato
-        icon: 'mdi:arrow-down-bold-outline'
+        icon: mdi:arrow-down-bold-outline
         style:
           color: white
           left: 80%
@@ -1077,7 +1112,7 @@ states:
             entity_id: input_number.temperatura_termostato
         type: icon
       - entity: sensor.riscaldamento_hvac_action
-        image: /local/immagini/lovelace/fiamma.gif
+        image: /local/fiamma.gif
         state_filter:
           heat: brigtness(100%)
           idle: brightness(50%) saturate(0.1)
@@ -1092,7 +1127,7 @@ states:
             state: 'on'
         elements:
           - entity: input_boolean.versione_term
-            icon: 'mdi:update'
+            icon: mdi:update
             style:
               left: 95%
               top: 30%
@@ -1104,6 +1139,6 @@ states:
                 option: AGGIORNAMENTO
             type: icon
         type: conditional
-    image: /local/immagini/lovelace/blu.jpg
+    image: /local/blu.jpg
     type: picture-elements
-type: 'custom:state-switch'
+type: custom:state-switch
