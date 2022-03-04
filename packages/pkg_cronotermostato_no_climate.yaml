@@ -1402,6 +1402,7 @@ automation:
       data:
         entity_id: input_boolean.versione_term
 
+
   - alias: controllo versione reset term
     trigger:
     - platform: time
@@ -1415,6 +1416,10 @@ automation:
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.versione_term
+    - service: notify.persistent_notification
+      data: 
+        message: C'è una nuova versione del cronotermostato. Bisogna aggiornare {{ states.sensor.tipo_aggiornamento_cronotermostato.state }}
+        title: AVVISO AGGIORNAMENTO
 
   - alias: download ok term
     trigger:
