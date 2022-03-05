@@ -108,12 +108,16 @@ input_datetime:
   orario_spegnimento_eco_term:
     has_date: false
     has_time: true
+  orario_spegnimento_notte_term​: 
+ ​    ​has_date​: ​false 
+ ​    ​has_time​: ​true​    
 
 input_boolean:
   accensione2:
   accensione3:
   eco_orario:
   versione_term:
+  notte:
 
 
 input_text:
