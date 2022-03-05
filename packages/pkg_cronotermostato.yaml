@@ -30,8 +30,8 @@ homeassistant:
 
     ##--------------------- IMPOSTAZIONI DEL PACKAGE ---------------------##
       setting:
-        Interruttore Caldaia: &caldaia 'switch.sonoff_10004b541f'           #sostituire con l'interruttore che attiva la caldaia
-        Sensore Temperatura: &sens_temp 'sensor.temperatura_corridoio'      #sostituire con il sensore della temperatura
+        Interruttore Caldaia: &caldaia 'switch.10004b541f'           #sostituire con l'interruttore che attiva la caldaia
+        Sensore Temperatura: &sens_temp 'sensor.10004b541f_t'      #sostituire con il sensore della temperatura
         Tracker: &tracker 'device_tracker.mi_10'
         Zona_casa: &zona 'home'
         Servizio Notifica: &servizio 'notify.mobile_app_mi_10'
@@ -124,12 +124,16 @@ input_datetime:
   orario_spegnimento_eco_term:
     has_date: false
     has_time: true
+  orario_spegnimento_notte_term:
+    has_date: false
+    has_time: true    
 
 input_boolean:
   accensione2:
   accensione3:
   eco_orario:
   versione_term:
+  notte:
 
 
 input_text:
@@ -240,7 +244,16 @@ script:
         data:
           url: 'https://raw.githubusercontent.com/mariocandida80/cronotermostato/master/packages/pkg_cronotermostato.yaml'
           overwrite: true
-
+  notte:
+    sequence:
+      - service: climate.turn_off
+        data:
+          entity_id: climate.riscaldamento
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.modalita_old
+          option: 'OFF'
+  
 automation:
 #Modalità manuale
   - alias: modalità manuale term
@@ -1421,7 +1434,7 @@ automation:
       data: 
         message: C'è una nuova versione del cronotermostato. Bisogna aggiornare {{ states.sensor.tipo_aggiornamento_cronotermostato.state }}
         title: AVVISO AGGIORNAMENTO
-
+    
   - alias: controllo versione reset term
     trigger: 
     - platform: time
@@ -1548,6 +1561,7 @@ automation:
     - data:
         entity_id: climate.riscaldamento
       service: climate.turn_off
+
     
   - alias: notte off term
     trigger:
