@@ -1,3 +1,4 @@
+<p align="center"/> <b>Il progetto è definitivamente chiuso.</b> <br> </p>
 <img src="https://img.shields.io/badge/Versione-2.5-green"> <img src="https://img.shields.io/badge/Aggiornato-no-orange"> <a href="https://forum.hassiohelp.eu/d/503-package-cronotermostato"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"></a>  <a href="https://github.com/mariocandida80/Home-Assistant-Cronothermostat">English version</a>
 <br>
 
